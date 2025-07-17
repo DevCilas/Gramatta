@@ -2,15 +2,26 @@ import React, { useState } from 'react';
 import logo from './Assets/icon.png';
 
 const navLinks = [
-    { href: '#quem-somos', label: 'Quem somos' },
-    { href: '#hero', label: 'Capas' },
+    { href: '#carousel', label: 'Capas' },
+    { href: '#about', label: 'Quem somos' },
     { href: '#services', label: 'Miolo' },
-    { href: '#samples', label: 'Dentro do livro' },
-    { href: '#autores', label: 'Autores' },
+    { href: '#authors', label: 'Autores' },
+    { href: '#tasting', label: 'Dentro do livro' },
 ];
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const scrollToSection = (href) => {
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        setMenuOpen(false);
+    };
 
     return (
         <header className="w-full bg-gram-white shadow-md fixed top-0 left-0 z-50">
@@ -33,13 +44,13 @@ const Header = () => {
                 {/* Desktop nav */}
                 <nav className="hidden md:flex gap-8">
                     {navLinks.map((link) => (
-                        <a
+                        <button
                             key={link.href}
-                            href={link.href}
-                            className="text-gram-blue hover:text-gram-dark-blue text-lg font-medium transition-colors"
+                            onClick={() => scrollToSection(link.href)}
+                            className="text-gram-blue hover:text-gram-dark-blue text-lg font-medium transition-colors cursor-pointer"
                         >
                             {link.label}
-                        </a>
+                        </button>
                     ))}
                 </nav>
             </div>
@@ -62,14 +73,13 @@ const Header = () => {
                 </div>
                 <nav className="flex flex-col gap-6 p-6">
                     {navLinks.map((link) => (
-                        <a
+                        <button
                             key={link.href}
-                            href={link.href}
-                            className="text-gram-blue hover:text-gram-dark-blue font-medium text-lg transition-colors"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={() => scrollToSection(link.href)}
+                            className="text-gram-blue hover:text-gram-dark-blue font-medium text-lg transition-colors cursor-pointer text-left"
                         >
                             {link.label}
-                        </a>
+                        </button>
                     ))}
                 </nav>
             </aside>

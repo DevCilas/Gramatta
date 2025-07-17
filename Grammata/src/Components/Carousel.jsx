@@ -134,12 +134,12 @@ const Carousel = () => {
                     </button>
                 </div>
 
-                {/* Mobile Scrollable Carousel */}
+                {/* Mobile Scrollable Carousel with Snap */}
                 <div className="md:hidden max-w-4xl mx-auto">
-                    <div className="overflow-x-auto overflow-y-visible scrollbar-hide touch-pan-x">
+                    <div className="overflow-x-auto overflow-y-visible scrollbar-hide touch-pan-x snap-x snap-mandatory">
                         <div className="flex gap-4 pb-4" style={{ width: `${launches.length * 100}%` }}>
                             {launches.map((launch) => (
-                                <div key={launch.id} className="w-full flex-shrink-0" style={{ width: `${100 / launches.length}%` }}>
+                                <div key={launch.id} className="w-full flex-shrink-0 snap-center" style={{ width: `${100 / launches.length}%` }}>
                                     <div className="bg-white p-6 rounded-lg shadow-lg">
                                         <div className="flex flex-col items-center gap-6">
                                             {/* Image */}
