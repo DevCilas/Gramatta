@@ -10,4 +10,17 @@
 /* Bahnschrift font - already available in Windows */
 body {
   font-family: 'Bahnschrift', Arial, sans-serif;
+  padding-top: 80px; /* Account for fixed header height */
 }
+
+/* Hide scrollbar for mobile carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+
