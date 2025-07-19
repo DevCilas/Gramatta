@@ -48,7 +48,7 @@ const Servicos = () => {
                         {services.map((service) => (
                             <div key={service.id} className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 flex flex-col">
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 bg-gram-green rounded-full flex items-center justify-center">
+                                    <div className="w-16 h-16 bg-gram-white rounded-full flex items-center justify-center">
                                         {service.icon}
                                     </div>
                                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from './Assets/logo.png';
 
 const QuemSomos = () => {
@@ -23,6 +24,14 @@ const QuemSomos = () => {
                   Nossa missão é dar voz a novos autores e trazer histórias inspiradoras
                   para mais leitores, construindo pontes entre escritores e leitores.
                 </p>
+                <div className="pt-4">
+                  <Link 
+                    to="/quem-somos"
+                    className="inline-block bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300"
+                  >
+                    Saiba Mais
+                  </Link>
+                </div>
               </div>
             </div>
             {/* Team Placeholder */}

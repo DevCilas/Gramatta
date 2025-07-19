@@ -3,23 +3,23 @@ import React, { useState, useEffect } from 'react';
 const launches = [
     {
         id: 1,
-        title: 'O Sabor da Memória',
-        description: 'Receitas de família que contam histórias e aquecem o coração.',
-        image: 'https://via.placeholder.com/400x300/f7f7f7/243666?text=O+Sabor+da+Memória',
+        title: 'Qual o caminho certo para uma vida plena?',
+        description: 'Uma conexão divina através da oração',
+        image: '/src/Components/Assets/releases/IMG-20250718-WA0074.jpg',
         buttonText: 'Saiba mais'
     },
     {
         id: 2,
-        title: 'Crônicas Urbanas',
-        description: 'Um olhar poético sobre o cotidiano das grandes cidades.',
-        image: 'https://via.placeholder.com/400x300/f7f7f7/243666?text=Crônicas+Urbanas',
+        title: 'Por que choras?',
+        description: 'Como econtrar a paz em meio ao caos',
+        image: '/src/Components/Assets/releases/IMG-20250718-WA0073.jpg',
         buttonText: 'Saiba mais'
     },
     {
         id: 3,
-        title: 'A Jornada do Escritor',
-        description: 'Descubra os segredos da narrativa e crie histórias inesquecíveis.',
-        image: 'https://via.placeholder.com/400x300/f7f7f7/243666?text=A+Jornada+do+Escritor',
+        title: 'Pregando com propósito',
+        description: 'Um guia indispensaveel para todos que foram chamados a proclamar a palavracom podeer, proposito e clareza',
+        image: '/src/Components/Assets/releases/IMG-20250718-WA0072.jpg',
         buttonText: 'Saiba mais'
     }
 ];
@@ -95,7 +95,7 @@ const Carousel = () => {
                                     <div className="bg-white p-8 md:p-12">
                                         <div className="flex flex-col lg:flex-row items-center gap-8">
                                             {/* Image */}
-                                            <div className="w-full lg:w-1/2">
+                                            <div className="w-full lg:w-1/1">
                                                 <img 
                                                     src={launch.image} 
                                                     alt={launch.title}

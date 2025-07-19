@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -13,33 +13,42 @@ const Footer = () => {
                     
                     {/* Address */}
                     <p className="text-gray-300 mb-8 leading-relaxed">
-                        Rua da Poesia, 123 - Bairro das Letras<br />
-                        Cidade Literária, BR
+                        Rua Cidade de Diadema<br />
+                        Suzano, SP<br />
+                        <a href="mailto:daskalosjean@gmail.com" className="hover:text-gram-green transition-colors duration-300">
+                            daskalosjean@gmail.com
+                        </a>
                     </p>
                     
                     {/* Social Media Icons */}
                     <div className="flex justify-center items-center space-x-6 mb-8">
                         {/* Facebook */}
                         <a 
-                            href="#" 
+                            href="https://www.facebook.com/grammatapublicacoesoficial?locale=pt_BR" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-white hover:text-gram-green transition-colors duration-300 transform hover:scale-110"
                             aria-label="Facebook"
                         >
                             <FaFacebook className="w-6 h-6" />
                         </a>
                         
-                        {/* Twitter */}
+                        {/* YouTube */}
                         <a 
-                            href="#" 
+                            href="https://www.youtube.com/@GrammataPublica%C3%A7%C3%B5es" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-white hover:text-gram-green transition-colors duration-300 transform hover:scale-110"
-                            aria-label="Twitter"
+                            aria-label="YouTube"
                         >
-                            <FaTwitter className="w-6 h-6" />
+                            <FaYoutube className="w-6 h-6" />
                         </a>
                         
                         {/* Instagram */}
                         <a 
-                            href="#" 
+                            href="https://www.instagram.com/grammatapublicacoes/" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-white hover:text-gram-green transition-colors duration-300 transform hover:scale-110"
                             aria-label="Instagram"
                         >
