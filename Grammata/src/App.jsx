@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './Components/header'
 import Carousel from './Components/Carousel'
 import About from './Components/About'
@@ -11,6 +11,17 @@ import QuemSomos from './Components/QuemSomos'
 import Capas from './Components/Capas'
 import Miolo from './Components/Miolo'
 import DentroDoLivro from './Components/DentroDoLivro'
+
+// Custom hook to handle scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function HomePage() {
   return (
@@ -37,6 +48,7 @@ function HomePage() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
