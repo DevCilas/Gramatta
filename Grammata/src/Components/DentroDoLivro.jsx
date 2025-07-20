@@ -14,7 +14,7 @@ const DentroDoLivro = () => {
         {
             id: 2,
             title: "Por dentro do livro",
-            description: "Para onde voce irá quano morrer?",
+            description: "Para onde você irá quando morrer?",
             videoId: "83LkzH5bm9U",
             author: "Canal Editora Grammata"
         },
