@@ -16,14 +16,14 @@ const launches = [
     {
         id: 2,
         title: 'Por que choras?',
-        description: 'Como econtrar a paz em meio ao caos',
+        description: 'Como encontrar a paz em meio ao caos',
         image: release2,
         buttonText: 'Saiba mais'
     },
     {
         id: 3,
         title: 'Pregando com propósito',
-        description: 'Um guia indispensaveel para todos que foram chamados a proclamar a palavracom podeer, proposito e clareza',
+        description: 'Um guia indispensável para todos que foram chamados a proclamar a palavra com poder, propósito e clareza',
         image: release3,
         buttonText: 'Saiba mais'
     }
@@ -97,7 +97,7 @@ const Carousel = () => {
                         >
                             {infiniteSlides.map((launch, index) => (
                                 <div key={`${launch.id}-${index}`} className="w-full flex-shrink-0">
-                                    <div className="bg-white p-8 md:p-12">
+                                    <div className="bg-white p-4 md:p-8">
                                         <div className="flex flex-col lg:flex-row items-center gap-8">
                                             {/* Image */}
                                             <div className="w-full lg:w-1/1">
@@ -142,30 +142,33 @@ const Carousel = () => {
 
                 {/* Mobile Scrollable Carousel with Snap */}
                 <div className="md:hidden max-w-4xl mx-auto">
-                    <div className="overflow-x-auto overflow-y-visible scrollbar-hide touch-pan-x snap-x snap-mandatory">
+                    <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
                         <div className="flex gap-4 pb-4" style={{ width: `${launches.length * 100}%` }}>
                             {launches.map((launch) => (
                                 <div key={launch.id} className="w-full flex-shrink-0 snap-center" style={{ width: `${100 / launches.length}%` }}>
-                                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                                        <div className="flex flex-col items-center gap-6">
+                                    <div className="bg-white p-4 rounded-lg shadow-lg h-full min-h-[350px] flex flex-col carousel-card">
+                                        <div className="flex flex-col items-center gap-4 flex-grow">
                                             {/* Image */}
-                                            <div className="w-full">
+                                            <div className="w-full flex-shrink-0">
                                                 <img 
                                                     src={launch.image} 
                                                     alt={launch.title}
-                                                    className="w-full h-48 object-cover rounded-lg shadow-md"
+                                                    className="w-full h-40 object-cover rounded-lg shadow-md"
+                                                    loading="lazy"
                                                 />
                                             </div>
                                             
                                             {/* Content */}
-                                            <div className="w-full text-center">
-                                                <h3 className="text-xl font-bold text-gram-dark-blue mb-3">
-                                                    {launch.title}
-                                                </h3>
-                                                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                                                    {launch.description}
-                                                </p>
-                                                <button className="bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-6 py-2 rounded-lg transition-colors duration-300 text-sm">
+                                            <div className="w-full text-center flex-grow flex flex-col justify-between">
+                                                <div>
+                                                    <h3 className="text-lg font-bold text-gram-dark-blue mb-2">
+                                                        {launch.title}
+                                                    </h3>
+                                                    <p className="text-gray-600 text-sm mb-3 leading-relaxed">
+                                                        {launch.description}
+                                                    </p>
+                                                </div>
+                                                <button className="bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-6 py-2 rounded-lg transition-colors duration-300 text-sm mt-auto">
                                                     {launch.buttonText}
                                                 </button>
                                             </div>
