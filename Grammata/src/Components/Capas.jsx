@@ -55,6 +55,11 @@ const Capas = () => {
         }
     };
 
+    const handleImageError = (e) => {
+        // Fallback image or error handling
+        e.target.src = 'https://via.placeholder.com/300x400'; // Placeholder image
+    };
+
     return (
         <div className="min-h-screen bg-gram-cream-white">
             {/* Header */}
@@ -99,8 +104,10 @@ const Capas = () => {
                                 <div className="relative">
                                     <img 
                                         src={book.image} 
-                                        alt={book.title || `Capa ${book.id}`}
+                                        alt={book.title}
                                         className="w-full h-80 object-cover"
+                                        onError={handleImageError}
+                                        loading="lazy"
                                     />
                                     {book.title && (
                                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
@@ -157,6 +164,7 @@ const Capas = () => {
                             src={selectedImage.image} 
                             alt={selectedImage.title || `Capa ${selectedImage.id}`}
                             className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                            loading="lazy"
                         />
                         
                         {/* Image Info */}

@@ -38,7 +38,7 @@ const Header = () => {
             <div className="container mx-auto flex items-center justify-between px-4 py-3">
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
-                    <img src={logo} alt="Grammata Logo" className="h-14 w-auto" />
+                    <img src={logo} alt="Grammata Logo" className="h-14 w-auto" loading="lazy" />
                     <span className="font-bold text-xl text-gram-dark-blue font-semibold">Grammata <span className='text-xl text-gram-green font-light'>Publicações</span></span>
                 </Link>
                 {/* mobile hamburguer */}
@@ -80,7 +80,7 @@ const Header = () => {
             >
                 <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
                     <Link to="/" className="flex items-center gap-2">
-                        <img src={logo} alt="Grammata Logo" className="h-8 w-auto" />
+                        <img src={logo} alt="Grammata Logo" className="h-8 w-auto" loading="lazy" />
                         <span className="font-bold text-lg text-gram-dark-blue">Grammata</span>
                     </Link>
                     <button
@@ -98,7 +98,7 @@ const Header = () => {
                                 key={link.href}
                                 to={link.href}
                                 onClick={() => setMenuOpen(false)}
-                                className="text-gram-blue hover:text-gram-dark-blue font-medium text-lg transition-colors cursor-pointer text-left"
+                                className="text-gram-blue hover:text-gram-dark-blue font-medium text-lg transition-all duration-200 cursor-pointer text-left py-2 px-3 rounded-lg hover:bg-gram-green hover:bg-opacity-20 active:scale-95 active:bg-gram-green active:bg-opacity-30"
                             >
                                 {link.label}
                             </Link>
@@ -106,7 +106,7 @@ const Header = () => {
                             <button
                                 key={link.href}
                                 onClick={() => scrollToSection(link.href)}
-                                className="text-gram-blue hover:text-gram-dark-blue font-medium text-lg transition-colors cursor-pointer text-left"
+                                className="text-gram-blue hover:text-gram-dark-blue font-medium text-lg transition-all duration-200 cursor-pointer text-left py-2 px-3 rounded-lg hover:bg-gram-green hover:bg-opacity-20 active:scale-95 active:bg-gram-green active:bg-opacity-30"
                             >
                                 {link.label}
                             </button>

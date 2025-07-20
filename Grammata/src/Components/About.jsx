@@ -37,7 +37,7 @@ const QuemSomos = () => {
             {/* Team Placeholder */}
             <div className="w-full lg:w-1/3">
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 flex items-center justify-center min-h-[300px] shadow">
-                <img src={logo} alt="Logo Grammata" className="w-full h-full object-contain" />
+                <img src={logo} alt="Logo Grammata" className="w-full h-full object-contain" loading="lazy" />
               </div>
             </div>
           </div>

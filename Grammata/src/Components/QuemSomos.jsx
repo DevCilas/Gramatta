@@ -25,6 +25,7 @@ const QuemSomos = () => {
                                     src={logo}
                                     alt="Grammata Publicações Logo"
                                     className="w-full h-80 object-contain rounded-lg shadow-md"
+                                    loading="lazy"
                                 />
                             </div>
                             <div className="lg:w-1/2">
@@ -70,6 +71,7 @@ const QuemSomos = () => {
                                     src={jeanCarlosImage}
                                     alt="Professor Jean Carlos da Silva"
                                     className="w-full h-96 object-cover rounded-lg shadow-md"
+                                    loading="lazy"
                                 />
                             </div>
                             <div className="lg:w-2/3">

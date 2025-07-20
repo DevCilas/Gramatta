@@ -106,6 +106,7 @@ const TastingSelection = () => {
                                             src={book.cover} 
                                             alt={book.title}
                                             className="absolute inset-0 w-full h-full object-cover"
+                                            loading="lazy"
                                         />
                                     </div>
                                     

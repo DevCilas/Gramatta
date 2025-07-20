@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Import all miolo images with error handling
-const miolo1 = '/src/Components/Assets/miolo/MIOLO1.jpeg';
-const miolo2 = '/src/Components/Assets/miolo/MIOLO2.jpeg';
-const miolo3 = '/src/Components/Assets/miolo/MIOLO3.jpeg';
-const miolo4 = '/src/Components/Assets/miolo/MIOLO4.png';
-const miolo5 = '/src/Components/Assets/miolo/MIOLO5.png';
-const miolo6 = '/src/Components/Assets/miolo/MIOLO6.png';
-const miolo7 = '/src/Components/Assets/miolo/MIOLO7.png';
-const miolo8 = '/src/Components/Assets/miolo/MIOLO8.png';
-const miolo9 = '/src/Components/Assets/miolo/MIOLO9.png';
-const miolo10 = '/src/Components/Assets/miolo/MIOLO10.png';
-const miolo11 = '/src/Components/Assets/miolo/MIOLO11.png';
-const miolo12 = '/src/Components/Assets/miolo/MIOLO12.png';
-const miolo13 = '/src/Components/Assets/miolo/MIOLO13.png';
-const miolo14 = '/src/Components/Assets/miolo/MIOLO14.jpeg';
+// Import all miolo images
+import miolo1 from './Assets/miolo/MIOLO1.jpeg';
+import miolo2 from './Assets/miolo/MIOLO2.jpeg';
+import miolo3 from './Assets/miolo/MIOLO3.jpeg';
+import miolo4 from './Assets/miolo/MIOLO4.png';
+import miolo5 from './Assets/miolo/MIOLO5.png';
+import miolo6 from './Assets/miolo/MIOLO6.png';
+import miolo7 from './Assets/miolo/MIOLO7.png';
+import miolo8 from './Assets/miolo/MIOLO8.png';
+import miolo9 from './Assets/miolo/MIOLO9.png';
+import miolo10 from './Assets/miolo/MIOLO10.png';
+import miolo11 from './Assets/miolo/MIOLO11.png';
+import miolo12 from './Assets/miolo/MIOLO12.png';
+import miolo13 from './Assets/miolo/MIOLO13.png';
+import miolo14 from './Assets/miolo/MIOLO14.jpeg';
 
 const mioloExamples = [
     { id: 1, image: miolo1, title: "Abertura de Capítulos", description: "Layout profissional para início de capítulos" },
@@ -105,6 +105,7 @@ const Miolo = () => {
                                         alt={miolo.title}
                                         className="w-full h-80 object-cover"
                                         onError={handleImageError}
+                                        loading="lazy"
                                     />
                                     <div className="hidden w-full h-80 bg-gray-200 flex items-center justify-center">
                                         <div className="text-center">
@@ -158,6 +159,7 @@ const Miolo = () => {
                             src={selectedImage.image} 
                             alt={selectedImage.title}
                             className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                            loading="lazy"
                         />
                         
                         {/* Image Info */}

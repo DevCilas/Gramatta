@@ -85,10 +85,8 @@ const DentroDoLivro = () => {
                                     <img 
                                         src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
                                         alt={video.title}
-                                        className="w-full h-48 object-cover"
-                                        onError={(e) => {
-                                            e.target.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
-                                        }}
+                                        className="w-full h-48 object-cover rounded-lg shadow-md"
+                                        loading="lazy"
                                     />
                                     {/* Play Button Overlay */}
                                     <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">

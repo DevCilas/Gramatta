@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
+// Import release images
+import release1 from './Assets/releases/IMG-20250718-WA0074.jpg';
+import release2 from './Assets/releases/IMG-20250718-WA0073.jpg';
+import release3 from './Assets/releases/IMG-20250718-WA0072.jpg';
+
 const launches = [
     {
         id: 1,
         title: 'Qual o caminho certo para uma vida plena?',
         description: 'Uma conexão divina através da oração',
-        image: '/src/Components/Assets/releases/IMG-20250718-WA0074.jpg',
+        image: release1,
         buttonText: 'Saiba mais'
     },
     {
         id: 2,
         title: 'Por que choras?',
         description: 'Como econtrar a paz em meio ao caos',
-        image: '/src/Components/Assets/releases/IMG-20250718-WA0073.jpg',
+        image: release2,
         buttonText: 'Saiba mais'
     },
     {
         id: 3,
         title: 'Pregando com propósito',
         description: 'Um guia indispensaveel para todos que foram chamados a proclamar a palavracom podeer, proposito e clareza',
-        image: '/src/Components/Assets/releases/IMG-20250718-WA0072.jpg',
+        image: release3,
         buttonText: 'Saiba mais'
     }
 ];
@@ -100,6 +105,7 @@ const Carousel = () => {
                                                     src={launch.image} 
                                                     alt={launch.title}
                                                     className="w-full h-64 md:h-80 object-cover rounded-lg shadow-md"
+                                                    loading="lazy"
                                                 />
                                             </div>
                                             

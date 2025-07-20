@@ -73,6 +73,7 @@ const Authors = () => {
                                                 src={author.image} 
                                                 alt={author.name}
                                                 className="w-full h-full object-cover"
+                                                loading="lazy"
                                             />
                                         </div>
                                         {/* Author Name */}
@@ -124,6 +125,7 @@ const Authors = () => {
                                                         src={author.image} 
                                                         alt={author.name}
                                                         className="w-full h-full object-cover"
+                                                        loading="lazy"
                                                     />
                                                 </div>
                                                 {/* Author Name */}
