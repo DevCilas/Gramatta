@@ -14,7 +14,7 @@ import miolo9 from './Assets/miolo/MIOLO9.png';
 import miolo10 from './Assets/miolo/MIOLO10.png';
 import miolo11 from './Assets/miolo/MIOLO11.png';
 import miolo12 from './Assets/miolo/MIOLO12.png';
-import miolo13 from './Assets/miolo/MIOLO13.png';
+import miolo13 from './Assets/miolo/MIOLO13.jpeg';
 import miolo14 from './Assets/miolo/MIOLO14.jpeg';
 
 const mioloExamples = [
