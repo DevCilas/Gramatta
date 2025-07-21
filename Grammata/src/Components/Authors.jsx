@@ -1,53 +1,93 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 // Import author images
-import lucianoCosta from "./Assets/authors/eSCRITOR lUCIANO cOSTA.jpg";
-import marcelo from "./Assets/authors/ESCRITOR MARCELO.jpeg";
-import mazinho from "./Assets/authors/Escritor Mazinho.jpg";
-import moises from "./Assets/authors/Escritor Moisés.jpeg";
-import rita from "./Assets/authors/Escritor Rita.JPG";
-import shirizu from "./Assets/authors/escritor shirizu.jpg";
-import adrianoSantos from "./Assets/authors/ESCRITOR ADRIANO SANTOS.jpg";
-import andreFarjao from "./Assets/authors/ESCRITOR ANDRÉ FARJÃO.jpg";
-import atila from "./Assets/authors/Escritor Atila.jpg";
-import djoel from "./Assets/authors/ESCRITOR DJOEL.jpg";
-import elmirRibeiro from "./Assets/authors/ESCRITOR ELMIR RIBEIRO.JPEG";
-import elyRobert from "./Assets/authors/Escritor Ely Robert.jpg";
-import fabioG from "./Assets/authors/ESCRITOR FÁBIO G..jpg";
-import helioRibeiro from "./Assets/authors/Escritor Helio Ribeiro.jpg";
-import isaacDias from "./Assets/authors/Escritor Isaac Dias.jpg";
+import AdrianoSantos from "./Assets/authors/Adriano Santos.svg";
+import Atila from "./Assets/authors/Atila.svg";
+import CarlosFilho from "./Assets/authors/Carlos Filho.svg";
+import Djoel from "./Assets/authors/Djoel.svg";
+import ElmirRibeiro from "./Assets/authors/Elmir Ribeiro.svg";
+import ElyRobert from "./Assets/authors/Ely Robert.svg";
+import HelioRibeiro from "./Assets/authors/Hélio Ribeiro.svg";
+import IsaacDias from "./Assets/authors/Isaac Dias.svg";
+import JosianeAlmeida from "./Assets/authors/Josiane Almeida.svg";
+import KellySilva from "./Assets/authors/Kelly Silva.svg";
+import LucianoCosta from "./Assets/authors/Luciano Costa.svg";
+import Marcelo from "./Assets/authors/Marcelo.svg";
+import Mazinho from "./Assets/authors/Mazinho.svg";
+import Rita from "./Assets/authors/Rita.svg";
+import Shirizu from "./Assets/authors/Shirizu.svg";
 
 const authors = [
-    { id: 1, name: "Luciano Costa", image: lucianoCosta },
-    { id: 2, name: "Marcelo", image: marcelo },
-    { id: 3, name: "Mazinho", image: mazinho },
-    { id: 4, name: "Moisés", image: moises },
-    { id: 5, name: "Rita", image: rita },
-    { id: 6, name: "Shirizu", image: shirizu },
-    { id: 7, name: "Adriano Santos", image: adrianoSantos },
-    { id: 8, name: "André Farjão", image: andreFarjao },
-    { id: 9, name: "Atila", image: atila },
-    { id: 10, name: "Djoel", image: djoel },
-    { id: 11, name: "Elmir Ribeiro", image: elmirRibeiro },
-    { id: 12, name: "Ely Robert", image: elyRobert },
-    { id: 13, name: "Fábio G.", image: fabioG },
-    { id: 14, name: "Hélio Ribeiro", image: helioRibeiro },
-    { id: 15, name: "Isaac Dias", image: isaacDias },
+    { id: 1, name: "Luciano Costa", image: LucianoCosta },
+    { id: 2, name: "Marcelo", image: Marcelo },
+    { id: 3, name: "Mazinho", image: Mazinho },
+    { id: 4, name: "Rita", image: Rita },
+    { id: 5, name: "Shirizu", image: Shirizu },
+    { id: 6, name: "Adriano Santos", image: AdrianoSantos },
+    { id: 7, name: "Atila", image: Atila },
+    { id: 8, name: "Djoel", image: Djoel },
+    { id: 9, name: "Elmir Ribeiro", image: ElmirRibeiro },
+    { id: 10, name: "Ely Robert", image: ElyRobert },
+    { id: 11, name: "Hélio Ribeiro", image: HelioRibeiro },
+    { id: 12, name: "Isaac Dias", image: IsaacDias },
+    { id: 13, name: "Kelly Silva", image: KellySilva },
+    { id: 14, name: "Josiane Almeida", image: JosianeAlmeida },
+    { id: 15, name: "Carlos Filho", image: CarlosFilho },
 ];
+
+// Duplicate authors array for infinite scroll
+const repeatCount = 5;
+const infiniteAuthors = Array.from({ length: repeatCount }).flatMap(() => authors);
+const middleIndex = Math.floor(infiniteAuthors.length / 2);
 
 const Authors = () => {
     const scrollContainerRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
 
-    const scrollLeft = () => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    // Detect mobile
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // On mount, scroll to the middle set
+    useEffect(() => {
+        const el = scrollContainerRef.current;
+        if (el) {
+            setTimeout(() => {
+                const cardWidth = isMobile ? 80 : 112; // px, matches style width
+                el.scrollLeft = cardWidth * middleIndex;
+            }, 100);
+        }
+    }, [isMobile]);
+
+    // Infinite scroll logic
+    const handleScroll = () => {
+        const el = scrollContainerRef.current;
+        if (!el) return;
+        const cardWidth = isMobile ? 80 : 112;
+        const totalCards = infiniteAuthors.length;
+        const visibleCards = isMobile ? 1 : 5;
+        const maxScroll = cardWidth * (totalCards - visibleCards);
+        if (el.scrollLeft <= cardWidth) {
+            // Near start, reset to middle
+            el.scrollLeft = cardWidth * (middleIndex - visibleCards);
+        } else if (el.scrollLeft >= maxScroll - cardWidth) {
+            // Near end, reset to middle
+            el.scrollLeft = cardWidth * (middleIndex - visibleCards);
         }
     };
 
+    const scrollLeft = () => {
+        const el = scrollContainerRef.current;
+        if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
+    };
+
     const scrollRight = () => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-        }
+        const el = scrollContainerRef.current;
+        if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
     };
 
     return (
@@ -63,10 +103,10 @@ const Authors = () => {
 
                     {/* Simple Horizontal Scroll for Mobile */}
                     <div className="md:hidden">
-                        <div className="overflow-x-auto scrollbar-hide">
+                        <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef} onScroll={handleScroll} style={{ scrollBehavior: 'smooth' }}>
                             <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
-                                {authors.map((author) => (
-                                    <div key={author.id} className="flex flex-col items-center flex-shrink-0" style={{ width: '80px' }}>
+                                {infiniteAuthors.map((author, idx) => (
+                                    <div key={idx + '-' + author.id} className="flex flex-col items-center flex-shrink-0" style={{ width: '80px' }}>
                                         {/* Author Image */}
                                         <div className="w-16 h-16 rounded-full overflow-hidden mb-2 border-2 border-gray-300">
                                             <img 
@@ -115,10 +155,10 @@ const Authors = () => {
                                 <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gram-white via-gram-white/80 to-transparent z-10 pointer-events-none"></div>
                                 
                                 {/* Scrollable Content */}
-                                <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef}>
+                                <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef} onScroll={handleScroll} style={{ scrollBehavior: 'smooth' }}>
                                     <div className="flex gap-8 pb-4" style={{ width: 'max-content' }}>
-                                        {authors.map((author) => (
-                                            <div key={author.id} className="flex flex-col items-center flex-shrink-0">
+                                        {infiniteAuthors.map((author, idx) => (
+                                            <div key={idx + '-' + author.id} className="flex flex-col items-center flex-shrink-0">
                                                 {/* Author Image */}
                                                 <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-full overflow-hidden mb-3 border-2 border-gray-300 hover:border-gram-green transition-all duration-300 hover:shadow-lg hover:rotate-3">
                                                     <img 

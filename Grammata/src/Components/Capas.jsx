@@ -1,39 +1,40 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Import all book cover images
-import capa1 from './Assets/capas/CAPA1.jpeg';
-import capa2 from './Assets/capas/CAPA2.jpeg';
-import capa3 from './Assets/capas/CAPA3.jpeg';
-import capa4 from './Assets/capas/CAPA4.jpeg';
-import capa5 from './Assets/capas/CAPA5.jpeg';
-import capa6 from './Assets/capas/CAPA6.jpeg';
-import capa7 from './Assets/capas/CAPA7.jpeg';
-import capa8 from './Assets/capas/CAPA8.jpeg';
-import capa9 from './Assets/capas/CAPA9.jpeg';
-import capa10 from './Assets/capas/CAPA10.jpeg';
-import capa11 from './Assets/capas/CAPA11.jpeg';
-import capa12 from './Assets/capas/CAPA12.jpeg';
-import capa13 from './Assets/capas/CAPA13.jpeg';
-import capa14 from './Assets/capas/CAPA14.jpeg';
-import capa15 from './Assets/capas/CAPA15.jpeg';
+// Import all book cover SVG images
+import opoderdapiedade from './Assets/capas/opoderdapiedade.svg';
+import opoderdabiblia from './Assets/capas/opoderdabiblia.svg';
+import ossegredosdofim from './Assets/capas/ossegredosdofim.svg';
+import oquefazerquandoocoracao from './Assets/capas/oquefazerquandoocoracao.svg';
+import asobrasdacarne from './Assets/capas/asobrasdacarne.svg';
+import odeusquecumpre from './Assets/capas/odeusquecumpre.svg';
+import porqueacruzeranecessaria from './Assets/capas/porqueacruzeranecessaria.svg';
+import umajornadaaluz from './Assets/capas/umajornadaaluz.svg';
+import apanhaimeasraposinhas from './Assets/capas/apanhaimeasraposinhas.svg';
+import historiasincriveis from './Assets/capas/historiasincriveis.svg';
+import acompaixaoquemove from './Assets/capas/acompaixaoquemove.svg';
+import raquel from './Assets/capas/raquel.svg';
+import opoderdabiblia2 from './Assets/capas/opoderdabiblia.svg';
+import comovenceraansiedade from './Assets/capas/comovenceraansiedade.svg';
+import anobrezadoservicocristao from './Assets/capas/anobrezadoservicocristao.svg';
+import verdades from './Assets/capas/101verdades.svg';
 
 const bookCovers = [
-    { id: 1, image: capa1, title: "O PODER Da Piedade", subtitle: "Transformando Vidas em Meio à Superficialidade", author: "Davi Secundo de Souza" },
-    { id: 2, image: capa2, title: "101 VERDADES Sobre a Oração", subtitle: "O PODER DA BÍBLIA NA MENTE HUMANA", author: "CHRYSTIAN E RUTH BENIGNO" },
-    { id: 3, image: capa3, title: "Os Segredos DO FIM DOS TEMPOS", subtitle: "As últimas coisas simplificadas", author: "UMA ANALOGIA MISSIONÁRIA" },
-    { id: 4, image: capa4, title: "QUANDO O CORAÇÃO?", subtitle: "SERMÃO DO MONTE - Seguindo os ensinos de Jesus", author: "PEDRO CARLOS" },
-    { id: 5, image: capa5, title: "AS OBRAS DA CARNE & O FRUTO DO ESPÍRITO", subtitle: "A compaixão Que move EVANGELHO", author: "Bruno Gouvea" },
-    { id: 6, image: capa6, title: "SUAS PROMESSAS", subtitle: "Lições do 'profeta do fogo' sobre confiar nas ricas promessas de Deus", author: "Mazinho Barboza" },
-    { id: 7, image: capa7, title: "POR QUE A CRUZ ERA NECESSÁRIA", subtitle: "", author: "Alysson Barbosa" },
-    { id: 8, image: capa8, title: "UMA JORNADA", author: "JONAS LUPPI" },
-    { id: 9, image: capa9, title: "APANHAI-ME AS RAPOSINHAS", subtitle: "O CLAMOR DA IGREJA POR SANTIDADE", author: "" },
-    { id: 10, image: capa10, title: "HISTÓRIAS INCRÍVEIS", subtitle: "", author: "CYNTHIA MÜLLER" },
-    { id: 11, image: capa11, title: "A COMPAIXÃO QUE MOVE O EVANGELHO", author: "Bruno Gouvea" },
-    { id: 12, image: capa12, title: "RAQUEL UMA ANALOGIA MISSIONÁRIA", author: "Antônio Adson" },
-    { id: 13, image: capa13, title: "O PODER DA BÍBLIA NA MENTE HUMANA", subtitle: "", author: "Daniel Rodrigues" },
-    { id: 14, image: capa14, title: "COMO VENCER A ANSIEDADE", subtitle: "", author: "Otacílio Júnior" },
-    { id: 15, image: capa15, title: "A NOBREZA DO SERVIÇO CRISTÃO", subtitle: "", author: "Davi Secundo" },
+    { id: 1, image: opoderdapiedade, title: "O PODER Da Piedade", subtitle: "Transformando Vidas em Meio à Superficialidade", author: "Davi Secundo de Souza" },
+    { id: 2, image: verdades, title: "101 VERDADES Sobre a Oração", subtitle: "O PODER DA BÍBLIA NA MENTE HUMANA", author: "CHRYSTIAN E RUTH BENIGNO" },
+    { id: 3, image: ossegredosdofim, title: "Os Segredos DO FIM DOS TEMPOS", subtitle: "As últimas coisas simplificadas", author: "UMA ANALOGIA MISSIONÁRIA" },
+    { id: 4, image: oquefazerquandoocoracao, title: "QUANDO O CORAÇÃO?", subtitle: "SERMÃO DO MONTE - Seguindo os ensinos de Jesus", author: "PEDRO CARLOS" },
+    { id: 5, image: asobrasdacarne, title: "AS OBRAS DA CARNE & O FRUTO DO ESPÍRITO", subtitle: "A compaixão Que move EVANGELHO", author: "Bruno Gouvea" },
+    { id: 6, image: odeusquecumpre, title: "SUAS PROMESSAS", subtitle: "Lições do 'profeta do fogo' sobre confiar nas ricas promessas de Deus", author: "Mazinho Barboza" },
+    { id: 7, image: porqueacruzeranecessaria, title: "POR QUE A CRUZ ERA NECESSÁRIA", subtitle: "", author: "Alysson Barbosa" },
+    { id: 8, image: umajornadaaluz, title: "UMA JORNADA", author: "JONAS LUPPI" },
+    { id: 9, image: apanhaimeasraposinhas, title: "APANHAI-ME AS RAPOSINHAS", subtitle: "O CLAMOR DA IGREJA POR SANTIDADE", author: "" },
+    { id: 10, image: historiasincriveis, title: "HISTÓRIAS INCRÍVEIS", subtitle: "", author: "CYNTHIA MÜLLER" },
+    { id: 11, image: acompaixaoquemove, title: "A COMPAIXÃO QUE MOVE O EVANGELHO", author: "Bruno Gouvea" },
+    { id: 12, image: raquel, title: "RAQUEL UMA ANALOGIA MISSIONÁRIA", author: "Antônio Adson" },
+    { id: 13, image: opoderdabiblia2, title: "O PODER DA BÍBLIA NA MENTE HUMANA", subtitle: "", author: "Daniel Rodrigues" },
+    { id: 14, image: comovenceraansiedade, title: "COMO VENCER A ANSIEDADE", subtitle: "", author: "Otacílio Júnior" },
+    { id: 15, image: anobrezadoservicocristao, title: "A NOBREZA DO SERVIÇO CRISTÃO", subtitle: "", author: "Davi Secundo" },
 ];
 
 const Capas = () => {
@@ -100,17 +101,17 @@ const Capas = () => {
                     {/* Book Covers Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {bookCovers.map((book) => (
-                            <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer" onClick={() => openModal(book)}>
-                                <div className="relative">
+                            <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col items-center" onClick={() => openModal(book)}>
+                                <div className="relative flex justify-center items-center aspect-[3/4] w-full max-w-xs mx-auto bg-white">
                                     <img 
                                         src={book.image} 
                                         alt={book.title}
-                                        className="w-full h-80 object-cover"
+                                        className="w-full h-full object-contain"
                                         onError={handleImageError}
                                         loading="lazy"
                                     />
                                     {book.title && (
-                                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 w-full">
                                             <h3 className="text-white font-bold text-lg mb-1">
                                                 {book.title}
                                             </h3>

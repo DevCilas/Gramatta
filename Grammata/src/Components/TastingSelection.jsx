@@ -1,12 +1,12 @@
 import React from "react";
 
 // Import actual book cover images
-import coverVidaSansao from "./Assets/books-pdf/avidadesansao.png";
-import coverTraducoesBiblia from "./Assets/books-pdf/astraducoesdabiblia.png";
-import coverMelhorarEBD from "./Assets/books-pdf/comomelhorarumaescoladominical.png";
-import coverMaoDireitaDeus from "./Assets/books-pdf/amaodireitadedeus.png";
-import coverComentarioRute from "./Assets/books-pdf/rute.png";
-import coverUmaCoisaFaco from "./Assets/books-pdf/umacoisafaco.png";
+import sansao from './Assets/books-pdf/sansao.svg';
+import astraducoes from './Assets/books-pdf/astraducoes.svg';
+import comomelhorarumaebd from './Assets/books-pdf/comomelhorarumaebd.svg';
+import amaodireita from './Assets/books-pdf/amaodireita.svg';
+import rute from './Assets/books-pdf/rute.svg';
+import umacoisafaco from './Assets/books-pdf/umacoisafaco.svg';
 
 // Import PDF files
 import pdfVidaSansao from "./Assets/books-pdf/A Vida de Sansão Obra Completa Digital.pdf";
@@ -20,50 +20,44 @@ const tastingBooks = [
     {
         id: 1,
         title: "A Vida de Sansão - Obra Completa Digital",
-        author: "Jean Carlos",
+        author: "Jean Carlos A.",
         description: "Uma obra completa sobre a vida de Sansão, explorando sua história bíblica de forma detalhada e envolvente.",
-        cover: coverVidaSansao,
-        pdf: pdfVidaSansao
+        cover: sansao
     },
     {
         id: 2,
         title: "As Traduções da Bíblia",
-        author: "Jean Carlos",
+        author: "Professor Jean Carlos A.",
         description: "Uma obra fundamental sobre as traduções bíblicas, sua história e importância para o estudo das escrituras.",
-        cover: coverTraducoesBiblia,
-        pdf: pdfTraducoesBiblia
+        cover: astraducoes
     },
     {
         id: 3,
-        title: "Como Melhorar uma escola dominical",
-        author: "Jean Carlos",
+        title: "Como Melhorar uma EBD",
+        author: "Jean Carlos A.",
         description: "Um guia prático para aprimorar o ensino na Escola Bíblica Dominical com metodologias eficazes.",
-        cover: coverMelhorarEBD,
-        pdf: pdfMelhorarEBD
+        cover: comomelhorarumaebd
     },
     {
         id: 4,
         title: "A Mão Direita de Deus - Degustação",
-        author: "Gerson Luis Silva",
+        author: "Autor Convidado",
         description: "Uma degustação especial deste livro que explora a mão direita de Deus em nossas vidas.",
-        cover: coverMaoDireitaDeus,
-        pdf: pdfMaoDireitaDeus
+        cover: amaodireita
     },
     {
         id: 5,
         title: "Novíssimo Comentário Expositivo e Exegético de Rute",
-        author: "Jean Carlos",
+        author: "Jean Carlos A.",
         description: "Um comentário detalhado e exegético do livro de Rute, versão digital completa.",
-        cover: coverComentarioRute,
-        pdf: pdfComentarioRute
+        cover: rute
     },
     {
         id: 6,
         title: "Uma Coisa Faço - Degustação",
         author: "José Aparecido",
         description: "Uma degustação especial da obra de José Aparecido, explorando temas profundos da fé.",
-        cover: coverUmaCoisaFaco,
-        pdf: pdfUmaCoisaFaco
+        cover: umacoisafaco
     }
 ];
 
@@ -99,19 +93,19 @@ const TastingSelection = () => {
                     <div className="flex justify-center">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
                             {tastingBooks.map((book) => (
-                                <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                                    {/* Book Cover - 9:16 aspect ratio */}
-                                    <div className="relative w-full" style={{ paddingBottom: '177.78%' }}> {/* 16/9 = 1.7778 */}
+                                <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full items-center">
+                                    {/* Book Cover - 3:4 aspect ratio, much larger */}
+                                    <div className="relative w-full max-w-[340px] aspect-[3/4] mx-auto flex items-center justify-center bg-white">
                                         <img 
                                             src={book.cover} 
                                             alt={book.title}
-                                            className="absolute inset-0 w-full h-full object-cover"
+                                            className="w-full h-full object-contain"
                                             loading="lazy"
                                         />
                                     </div>
                                     
                                     {/* Book Info - Flex container to push button to bottom */}
-                                    <div className="p-4 flex flex-col flex-grow">
+                                    <div className="p-3 flex flex-col flex-grow w-full max-w-[340px] mx-auto">
                                         <div className="flex-grow">
                                             <h3 className="text-lg font-bold text-gram-dark-blue mb-2">
                                                 {book.title}

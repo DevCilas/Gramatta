@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from './Assets/icon.png';
+import logo from './Assets/icon.svg';
 
 const navLinks = [
     { href: '/', label: 'Início', isRoute: true },

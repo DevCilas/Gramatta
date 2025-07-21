@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // Import release images
-import release1 from './Assets/releases/IMG-20250718-WA0074.jpg';
-import release2 from './Assets/releases/IMG-20250718-WA0073.jpg';
-import release3 from './Assets/releases/IMG-20250718-WA0072.jpg';
+import slidequalocaminhocerto from './Assets/releases/slidequalocaminhocerto.svg';
+import slideporquechoras from './Assets/releases/slideporquechoras.svg';
+import slidepregandocomproposito from './Assets/releases/slidepregandocomproposito.svg';
 
 const launches = [
     {
         id: 1,
         title: 'Qual o caminho certo para uma vida plena?',
         description: 'Uma conexão divina através da oração',
-        image: release1,
+        image: slidequalocaminhocerto,
         buttonText: 'Saiba mais'
     },
     {
         id: 2,
         title: 'Por que choras?',
         description: 'Como encontrar a paz em meio ao caos',
-        image: release2,
+        image: slideporquechoras,
         buttonText: 'Saiba mais'
     },
     {
         id: 3,
         title: 'Pregando com propósito',
         description: 'Um guia indispensável para todos que foram chamados a proclamar a palavra com poder, propósito e clareza',
-        image: release3,
+        image: slidepregandocomproposito,
         buttonText: 'Saiba mais'
     }
 ];
@@ -32,16 +32,19 @@ const launches = [
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const autoScrollRef = useRef();
+    const userInteractedRef = useRef(false);
+    const currentIndexRef = useRef(currentIndex);
+    const mobileScrollRef = useRef();
+    const [isMobile, setIsMobile] = useState(false);
 
     // Create infinite slides by duplicating the original array many times
     const infiniteSlides = [...launches, ...launches, ...launches, ...launches, ...launches, ...launches, ...launches, ...launches, ...launches, ...launches];
 
     const nextSlide = () => {
         if (isTransitioning) return;
-        
         setIsTransitioning(true);
         setCurrentIndex(prevIndex => prevIndex + 1);
-        
         setTimeout(() => {
             setIsTransitioning(false);
         }, 500);
@@ -49,18 +52,85 @@ const Carousel = () => {
 
     const prevSlide = () => {
         if (isTransitioning) return;
-        
         setIsTransitioning(true);
         setCurrentIndex(prevIndex => prevIndex - 1);
-        
         setTimeout(() => {
             setIsTransitioning(false);
         }, 500);
     };
 
+    // Keep a ref to the latest currentIndex
+    useEffect(() => {
+        currentIndexRef.current = currentIndex;
+    }, [currentIndex]);
+
+    // Detect mobile
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     // Initialize to middle section
     useEffect(() => {
         setCurrentIndex(launches.length * 5); // Start in the middle of the duplicated array
+    }, []);
+
+    // Auto-scroll effect (set up ONCE)
+    useEffect(() => {
+        if (isMobile) {
+            // Mobile: scroll the container horizontally
+            let mobileIndex = 0;
+            autoScrollRef.current = setInterval(() => {
+                const el = mobileScrollRef.current;
+                if (!el) return;
+                if (!userInteractedRef.current) {
+                    mobileIndex = (mobileIndex + 1) % launches.length;
+                    const cardWidth = el.scrollWidth / launches.length;
+                    el.scrollTo({ left: cardWidth * mobileIndex, behavior: 'smooth' });
+                } else {
+                    userInteractedRef.current = false;
+                }
+            }, 5000);
+            return () => clearInterval(autoScrollRef.current);
+        } else {
+            // Desktop: use index
+            autoScrollRef.current = setInterval(() => {
+                if (!userInteractedRef.current) {
+                    setCurrentIndex(idx => idx + 1);
+                } else {
+                    userInteractedRef.current = false;
+                }
+            }, 5000);
+            return () => clearInterval(autoScrollRef.current);
+        }
+    }, [isMobile]);
+
+    // Handler to mark user interaction
+    const handleUserInteraction = (action) => {
+        userInteractedRef.current = true;
+        action();
+    };
+
+    // For mobile, allow swipe/scroll interaction
+    useEffect(() => {
+        const el = mobileScrollRef.current;
+        if (!el) return;
+        let isTouching = false;
+        const onTouchStart = () => { isTouching = true; };
+        const onTouchEnd = () => {
+            if (isTouching) {
+                userInteractedRef.current = true;
+                isTouching = false;
+            }
+        };
+        el.addEventListener('touchstart', onTouchStart);
+        el.addEventListener('touchend', onTouchEnd);
+        return () => {
+            el.removeEventListener('touchstart', onTouchStart);
+            el.removeEventListener('touchend', onTouchEnd);
+        };
     }, []);
 
     return (
@@ -80,7 +150,7 @@ const Carousel = () => {
                 <div className="hidden md:flex items-center gap-2 max-w-6xl mx-auto">
                     {/* Left Navigation Arrow */}
                     <button
-                        onClick={prevSlide}
+                        onClick={() => handleUserInteraction(prevSlide)}
                         className="bg-white hover:bg-gray-50 text-gram-dark-blue p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex-shrink-0"
                         aria-label="Previous slide"
                     >
@@ -130,7 +200,7 @@ const Carousel = () => {
 
                     {/* Right Navigation Arrow */}
                     <button
-                        onClick={nextSlide}
+                        onClick={() => handleUserInteraction(nextSlide)}
                         className="bg-white hover:bg-gray-50 text-gram-dark-blue p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex-shrink-0"
                         aria-label="Next slide"
                     >
@@ -142,7 +212,7 @@ const Carousel = () => {
 
                 {/* Mobile Scrollable Carousel with Snap */}
                 <div className="md:hidden max-w-4xl mx-auto">
-                    <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+                    <div ref={mobileScrollRef} className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
                         <div className="flex gap-4 pb-4" style={{ width: `${launches.length * 100}%` }}>
                             {launches.map((launch) => (
                                 <div key={launch.id} className="w-full flex-shrink-0 snap-center" style={{ width: `${100 / launches.length}%` }}>
@@ -153,7 +223,7 @@ const Carousel = () => {
                                                 <img 
                                                     src={launch.image} 
                                                     alt={launch.title}
-                                                    className="w-full h-40 object-cover rounded-lg shadow-md"
+                                                    className="w-full h-56 object-cover rounded-lg shadow-md"
                                                     loading="lazy"
                                                 />
                                             </div>

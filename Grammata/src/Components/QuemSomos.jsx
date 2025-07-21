@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import jeanCarlosImage from './Assets/JeanCarlos.jpeg';
-import logo from './Assets/logo.png';
+import jeanCarlosImage from './Assets/JeanCarlos.svg';
+import logo from './Assets/logo.svg';
 
 const QuemSomos = () => {
     return (

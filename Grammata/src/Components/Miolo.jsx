@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Import all miolo images
-import miolo1 from './Assets/miolo/MIOLO1.jpeg';
-import miolo2 from './Assets/miolo/MIOLO2.jpeg';
-import miolo3 from './Assets/miolo/MIOLO3.jpeg';
-import miolo4 from './Assets/miolo/MIOLO4.png';
-import miolo5 from './Assets/miolo/MIOLO5.png';
-import miolo6 from './Assets/miolo/MIOLO6.png';
-import miolo7 from './Assets/miolo/MIOLO7.png';
-import miolo8 from './Assets/miolo/MIOLO8.png';
-import miolo9 from './Assets/miolo/MIOLO9.png';
-import miolo10 from './Assets/miolo/MIOLO10.png';
-import miolo11 from './Assets/miolo/MIOLO11.png';
-import miolo12 from './Assets/miolo/MIOLO12.png';
-import miolo13 from './Assets/miolo/MIOLO13.jpeg';
-import miolo14 from './Assets/miolo/MIOLO14.jpeg';
+import miolo1 from './Assets/miolo/1.svg';
+import miolo2 from './Assets/miolo/2.svg';
+import miolo3 from './Assets/miolo/3.svg';
+import miolo4 from './Assets/miolo/4.svg';
+import miolo5 from './Assets/miolo/5.svg';
+import miolo6 from './Assets/miolo/6.svg';
+import miolo7 from './Assets/miolo/7.svg';
+import miolo8 from './Assets/miolo/8.svg';
+import miolo9 from './Assets/miolo/9.svg';
+import miolo10 from './Assets/miolo/10.svg';
+import miolo11 from './Assets/miolo/11.svg';
+import miolo12 from './Assets/miolo/12.svg';
+import miolo13 from './Assets/miolo/13.svg';
+import miolo14 from './Assets/miolo/14.svg';
 
 const mioloExamples = [
     { id: 1, image: miolo1, title: "Abertura de Capítulos", description: "Layout profissional para início de capítulos" },
