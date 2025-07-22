@@ -11,21 +11,24 @@ const launches = [
         title: 'Qual o caminho certo para uma vida plena?',
         description: 'Uma conexão divina através da oração',
         image: slidequalocaminhocerto,
-        buttonText: 'Saiba mais'
+        buttonText: 'Saiba mais',
+        link: 'https://www.instagram.com/josianealmeidaoficial/'
     },
     {
         id: 2,
         title: 'Por que choras?',
         description: 'Como encontrar a paz em meio ao caos',
         image: slideporquechoras,
-        buttonText: 'Saiba mais'
+        buttonText: 'Saiba mais',
+        link: 'https://www.instagram.com/kelly.c.pereiradasilva/'
     },
     {
         id: 3,
         title: 'Pregando com propósito',
         description: 'Um guia indispensável para todos que foram chamados a proclamar a palavra com poder, propósito e clareza',
         image: slidepregandocomproposito,
-        buttonText: 'Saiba mais'
+        buttonText: 'Saiba mais',
+        link: 'https://www.instagram.com/carlosfillhoo/'
     }
 ];
 
@@ -187,9 +190,14 @@ const Carousel = () => {
                                                 <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                                                     {launch.description}
                                                 </p>
-                                                <button className="bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300">
+                                                <a
+                                                    href={launch.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300 inline-block"
+                                                >
                                                     {launch.buttonText}
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -238,9 +246,14 @@ const Carousel = () => {
                                                         {launch.description}
                                                     </p>
                                                 </div>
-                                                <button className="bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-6 py-2 rounded-lg transition-colors duration-300 text-sm mt-auto">
+                                                <a
+                                                    href={launch.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-6 py-2 rounded-lg transition-colors duration-300 text-sm mt-auto inline-block"
+                                                >
                                                     {launch.buttonText}
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
