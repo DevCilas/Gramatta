@@ -7,7 +7,7 @@ import CarlosFilho from "./Assets/authors/Carlos Filho.svg";
 import Djoel from "./Assets/authors/Djoel.svg";
 import ElmirRibeiro from "./Assets/authors/Elmir Ribeiro.svg";
 import ElyRobert from "./Assets/authors/Ely Robert.svg";
-import HelioRibeiro from "./Assets/authors/Hélio Ribeiro.svg";
+import HelioRibeiro from "./Assets/authors/helio-ribeiro.jpeg";
 import IsaacDias from "./Assets/authors/Isaac Dias.svg";
 import JosianeAlmeida from "./Assets/authors/Josiane Almeida.svg";
 import KellySilva from "./Assets/authors/Kelly Silva.svg";

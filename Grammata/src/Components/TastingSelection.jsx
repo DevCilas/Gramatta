@@ -8,13 +8,7 @@ import amaodireita from './Assets/books-pdf/amaodireita.svg';
 import rute from './Assets/books-pdf/rute.svg';
 import umacoisafaco from './Assets/books-pdf/umacoisafaco.svg';
 
-// Import PDF files
-import pdfVidaSansao from "./Assets/books-pdf/A Vida de Sansão Obra Completa Digital.pdf";
-import pdfTraducoesBiblia from "./Assets/books-pdf/As Traduções da Bíblia Uma obra do Professor Jean Carlos A.pdf";
-import pdfMelhorarEBD from "./Assets/books-pdf/Como Melhorar uma EBD livro digital.pdf";
-import pdfMaoDireitaDeus from "./Assets/books-pdf/Livro a Mão direita de Deus - Degustação.pdf";
-import pdfComentarioRute from "./Assets/books-pdf/Novíssimo Comentário Exositivo e Exegético de Rute Versão Digital.pdf";
-import pdfUmaCoisaFaco from "./Assets/books-pdf/Uma coisa faço degustação do José Aparecido.pdf";
+// Remove PDF imports
 
 const tastingBooks = [
     {
@@ -22,42 +16,48 @@ const tastingBooks = [
         title: "A Vida de Sansão - Obra Completa Digital",
         author: "Jean Carlos A.",
         description: "Uma obra completa sobre a vida de Sansão, explorando sua história bíblica de forma detalhada e envolvente.",
-        cover: sansao
+        cover: sansao,
+        pdf: "/books-pdf/a-vida-de-sansao.pdf"
     },
     {
         id: 2,
         title: "As Traduções da Bíblia",
         author: "Professor Jean Carlos A.",
         description: "Uma obra fundamental sobre as traduções bíblicas, sua história e importância para o estudo das escrituras.",
-        cover: astraducoes
+        cover: astraducoes,
+        pdf: "/books-pdf/as-traducoes-da-biblia.pdf"
     },
     {
         id: 3,
         title: "Como Melhorar uma EBD",
         author: "Jean Carlos A.",
         description: "Um guia prático para aprimorar o ensino na Escola Bíblica Dominical com metodologias eficazes.",
-        cover: comomelhorarumaebd
+        cover: comomelhorarumaebd,
+        pdf: "/books-pdf/como-melhorar-ebd.pdf"
     },
     {
         id: 4,
         title: "A Mão Direita de Deus - Degustação",
         author: "Autor Convidado",
         description: "Uma degustação especial deste livro que explora a mão direita de Deus em nossas vidas.",
-        cover: amaodireita
+        cover: amaodireita,
+        pdf: "/books-pdf/mao-direita-de-deus.pdf"
     },
     {
         id: 5,
         title: "Novíssimo Comentário Expositivo e Exegético de Rute",
         author: "Jean Carlos A.",
         description: "Um comentário detalhado e exegético do livro de Rute, versão digital completa.",
-        cover: rute
+        cover: rute,
+        pdf: "/books-pdf/comentario-rute.pdf"
     },
     {
         id: 6,
         title: "Uma Coisa Faço - Degustação",
         author: "José Aparecido",
         description: "Uma degustação especial da obra de José Aparecido, explorando temas profundos da fé.",
-        cover: umacoisafaco
+        cover: umacoisafaco,
+        pdf: "/books-pdf/uma-coisa-faco.pdf"
     }
 ];
 
