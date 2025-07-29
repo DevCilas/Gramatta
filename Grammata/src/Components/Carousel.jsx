@@ -1,34 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Import release images
-import slidequalocaminhocerto from './Assets/releases/slidequalocaminhocerto.svg';
-import slideporquechoras from './Assets/releases/slideporquechoras.svg';
-import slidepregandocomproposito from './Assets/releases/slidepregandocomproposito.svg';
+import slide1 from './Assets/releases/slideescatologia.svg';
+import slide2 from './Assets/releases/slideimportanciaebd.svg';
+import slide3 from './Assets/releases/slideminhasguerras.svg';
 
 const launches = [
     {
         id: 1,
-        title: 'Qual o caminho certo para uma vida plena?',
-        description: 'Uma conexão divina através da oração',
-        image: slidequalocaminhocerto,
+        title: 'Escatologia Bíblica',
+        description: 'Um grito por sua volta',
+        image: slide1,
         buttonText: 'Saiba mais',
-        link: 'https://www.instagram.com/josianealmeidaoficial/'
+        link: 'https://www.instagram.com/ubirajaraalmeida1/'
     },
     {
         id: 2,
-        title: 'Por que choras?',
-        description: 'Como encontrar a paz em meio ao caos',
-        image: slideporquechoras,
+        title: 'A importância da Escola Dominical',
+        description: 'Estratégias práticas para melhorar a Maior Escola do Mundo ',
+        image: slide2,
         buttonText: 'Saiba mais',
-        link: 'https://www.instagram.com/kelly.c.pereiradasilva/'
+        link: 'https://www.instagram.com/grammatapublicacoes/'
     },
     {
         id: 3,
-        title: 'Pregando com propósito',
-        description: 'Um guia indispensável para todos que foram chamados a proclamar a palavra com poder, propósito e clareza',
-        image: slidepregandocomproposito,
+        title: 'Minhas Guerras, Minhas Crises',
+        description: 'Como vencer as dores que surgem na vida dos homens de Deus',
+        image: slide3,
         buttonText: 'Saiba mais',
-        link: 'https://www.instagram.com/carlosfillhoo/'
+        link: 'https://www.instagram.com/pr_thales_walassi/'
     }
 ];
 
