@@ -32,4 +32,72 @@ body {
   overflow: hidden;
 }
 
+/* --- Custom Swiper Styles for Capas Page (V5 - Final) --- */
 
+/* Wrapper principal do carrossel */
+.capas-carousel-wrapper {
+  position: relative; /* Essencial para ancorar as setas */
+  margin: 0 auto;
+  padding: 0 10px; /* Adiciona um pequeno padding geral para evitar toques acidentais na borda da tela */
+}
+
+/* --- Setas de Navegação (para Desktop) --- */
+.capas-carousel-wrapper .swiper-button-next,
+.capas-carousel-wrapper .swiper-button-prev {
+  display: none; /* Escondido por padrão (mobile-first) */
+  color: #243666; /* gram-dark-blue */
+  background-color: rgba(247, 247, 247, 0.85);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+.capas-carousel-wrapper .swiper-button-next::after,
+.capas-carousel-wrapper .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* --- Paginação com Bolinhas (para Mobile/Tablet) --- */
+.capas-carousel-wrapper .swiper-pagination {
+  position: relative;
+  bottom: auto; /* Reseta o posicionamento absoluto padrão */
+  margin-top: 24px; /* Adiciona espaço entre os slides e as bolinhas */
+}
+
+.capas-carousel-wrapper .swiper-pagination-bullet {
+  background-color: #8cd8be; /* gram-green */
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.capas-carousel-wrapper .swiper-pagination-bullet-active {
+  background-color: #0e6ba7; /* gram-blue */
+  opacity: 1;
+}
+
+/* --- Media Query para Telas Grandes (Desktop, a partir de 1024px) --- */
+@media (min-width: 1024px) {
+  .capas-carousel-wrapper {
+    /* No desktop, criamos o espaço para as setas externas */
+    padding: 0 60px; 
+  }
+
+  .capas-carousel-wrapper .swiper-button-next,
+  .capas-carousel-wrapper .swiper-button-prev {
+    display: flex; /* Mostra as setas */
+  }
+
+  .capas-carousel-wrapper .swiper-pagination {
+    display: none; /* Esconde as bolinhas */
+  }
+
+  .capas-carousel-wrapper .swiper-button-next:hover,
+  .capas-carousel-wrapper .swiper-button-prev:hover {
+    background-color: rgba(247, 247, 247, 1);
+    transform: scale(1.05);
+  }
+}

@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Import all book cover SVG images
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay, Pagination } from 'swiper/modules'; 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// Imagens das capas
 import opoderdapiedade from './Assets/capas/opoderdapiedade.svg';
-import opoderdabiblia from './Assets/capas/opoderdabiblia.svg';
+import verdades from './Assets/capas/101verdades.svg';
 import ossegredosdofim from './Assets/capas/ossegredosdofim.svg';
 import oquefazerquandoocoracao from './Assets/capas/oquefazerquandoocoracao.svg';
 import asobrasdacarne from './Assets/capas/asobrasdacarne.svg';
@@ -14,10 +20,9 @@ import apanhaimeasraposinhas from './Assets/capas/apanhaimeasraposinhas.svg';
 import historiasincriveis from './Assets/capas/historiasincriveis.svg';
 import acompaixaoquemove from './Assets/capas/acompaixaoquemove.svg';
 import raquel from './Assets/capas/raquel.svg';
-import opoderdabiblia2 from './Assets/capas/opoderdabiblia.svg';
+import opoderdabiblia from './Assets/capas/opoderdabiblia.svg';
 import comovenceraansiedade from './Assets/capas/comovenceraansiedade.svg';
 import anobrezadoservicocristao from './Assets/capas/anobrezadoservicocristao.svg';
-import verdades from './Assets/capas/101verdades.svg';
 
 const bookCovers = [
     { id: 1, image: opoderdapiedade, title: "O PODER Da Piedade", subtitle: "Transformando Vidas em Meio à Superficialidade", author: "Davi Secundo de Souza" },
@@ -32,7 +37,7 @@ const bookCovers = [
     { id: 10, image: historiasincriveis, title: "HISTÓRIAS INCRÍVEIS", subtitle: "", author: "CYNTHIA MÜLLER" },
     { id: 11, image: acompaixaoquemove, title: "A COMPAIXÃO QUE MOVE O EVANGELHO", author: "Bruno Gouvea" },
     { id: 12, image: raquel, title: "RAQUEL UMA ANALOGIA MISSIONÁRIA", author: "Antônio Adson" },
-    { id: 13, image: opoderdabiblia2, title: "O PODER DA BÍBLIA NA MENTE HUMANA", subtitle: "", author: "Daniel Rodrigues" },
+    { id: 13, image: opoderdabiblia, title: "O PODER DA BÍBLIA NA MENTE HUMANA", subtitle: "", author: "Daniel Rodrigues" },
     { id: 14, image: comovenceraansiedade, title: "COMO VENCER A ANSIEDADE", subtitle: "", author: "Otacílio Júnior" },
     { id: 15, image: anobrezadoservicocristao, title: "A NOBREZA DO SERVIÇO CRISTÃO", subtitle: "", author: "Davi Secundo" },
 ];
@@ -42,12 +47,12 @@ const Capas = () => {
 
     const openModal = (book) => {
         setSelectedImage(book);
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setSelectedImage(null);
-        document.body.style.overflow = 'unset'; // Restore scrolling
+        document.body.style.overflow = 'unset';
     };
 
     const handleModalClick = (e) => {
@@ -57,13 +62,11 @@ const Capas = () => {
     };
 
     const handleImageError = (e) => {
-        // Fallback image or error handling
-        e.target.src = 'https://via.placeholder.com/300x400'; // Placeholder image
+        e.target.src = 'https://via.placeholder.com/300x400';
     };
 
     return (
         <div className="min-h-screen bg-gram-cream-white">
-            {/* Header */}
             <div className="bg-gram-dark-blue text-white py-16">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">Projetos de Capas</h1>
@@ -71,76 +74,50 @@ const Capas = () => {
                 </div>
             </div>
 
-            {/* Main Content */}
             <div className="container mx-auto px-4 py-12">
-                <div className="max-w-6xl mx-auto">
-                    {/* Introduction Text */}
-                    <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-                        <h2 className="text-3xl font-bold text-gram-dark-blue mb-6">
-                            A Importância da Capa do Livro na Construção da Identidade Editorial
-                        </h2>
-                        <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
-                            <p>
-                                A capa é considerada o cartão de visita de um livro, pois além de protegê-lo serve como chamariz para os leitores. Nela você irá encontrar o título da obra, nome do autor(a) e a editora em que ela foi publicada. É a parte de trás do livro, nela consta a sua sinopse e podemos conhecer sobre do que se trata a obra.
-                            </p>
-                            <p>
-                                Em um universo literário cada vez mais visual e competitivo, a capa de um livro deixou de ser apenas uma proteção física para se tornar uma porta de entrada simbólica para o conteúdo que habita suas páginas. É a primeira impressão, o convite silencioso ao leitor e, muitas vezes, o fator decisivo entre o permanecer na estante ou ser levado para casa.
-                            </p>
-                            <p>
-                                Na Grammata, compreendemos profundamente essa importância e levamos a sério cada etapa do processo de criação de uma capa. Com uma equipe composta por três grandes capistas, profissionais que unem sensibilidade artística, domínio técnico e visão editorial, estabelecemos um compromisso com a excelência. Nossa prioridade não é apenas estética: buscamos expressar a essência única de cada obra, sua identidade particular, e harmonizá-la com padrões editoriais que valorizem o conteúdo sem eclipsá-lo.
-                            </p>
-                            <p>
-                                Cada capa produzida é fruto de um trabalho minucioso, onde são considerados os elementos visuais, tipográficos e simbólicos que melhor comunicam o tom, o gênero e a proposta narrativa do livro. A qualidade gráfica, a coerência editorial e o impacto visual caminham juntos para transformar um simples volume em um objeto de desejo e inspiração.
-                            </p>
-                            <p>
-                                Mais do que uma embalagem, a capa é um manifesto artístico. Ela traduz o coração do livro em imagem. Por isso, na Grammata, cada projeto gráfico é tratado como um diálogo entre o autor, o leitor e o universo da leitura — e esse diálogo começa, necessariamente, pela capa.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Book Covers Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {bookCovers.map((book) => (
-                            <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col items-center" onClick={() => openModal(book)}>
-                                <div className="relative flex justify-center items-center aspect-[3/4] w-full max-w-xs mx-auto bg-white">
-                                    <img 
-                                        src={book.image} 
-                                        alt={book.title}
-                                        className="w-full h-full object-contain"
-                                        onError={handleImageError}
-                                        loading="lazy"
-                                    />
-                                    {book.title && (
-                                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 w-full">
-                                            <h3 className="text-white font-bold text-lg mb-1">
-                                                {book.title}
-                                            </h3>
-                                            {book.subtitle && (
-                                                <p className="text-white/90 text-sm mb-1">
-                                                    {book.subtitle}
-                                                </p>
-                                            )}
-                                            {book.author && (
-                                                <p className="text-white/80 text-sm">
-                                                    {book.author}
-                                                </p>
-                                            )}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Back to Home Button */}
-                    <div className="text-center mt-12">
-                        <Link 
-                            to="/"
-                            className="inline-block bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300"
+                <Swiper
+                    modules={[Navigation, Autoplay, Pagination]} 
+                    navigation={true}
+                    pagination={{ clickable: true }}
+                    loop={true}
+                    autoplay={{
+                        delay: 3500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    // A PROPRIEDADE 'centeredSlides' FOI REMOVIDA DAQUI
+                    className="capas-carousel-wrapper"
+                    breakpoints={{
+                        320: { slidesPerView: 1, spaceBetween: 20 },
+                        640: { slidesPerView: 2, spaceBetween: 30 },
+                        768: { slidesPerView: 3, spaceBetween: 30 },
+                        1024: { slidesPerView: 4, spaceBetween: 40 },
+                    }}
+                >
+                    {bookCovers.map((book) => (
+                        <SwiperSlide 
+                            key={book.id} 
+                            className="cursor-pointer group shadow-xl rounded-lg overflow-hidden"
+                            onClick={() => openModal(book)}
                         >
-                            Voltar ao Início
-                        </Link>
-                    </div>
+                            <img 
+                                src={book.image} 
+                                alt={book.title}
+                                className="w-full h-full object-cover aspect-[3/4] block transform group-hover:scale-105 transition-transform duration-300"
+                                onError={handleImageError}
+                                loading="lazy"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+
+                <div className="text-center mt-20">
+                    <Link 
+                        to="/"
+                        className="inline-block bg-gram-dark-blue hover:bg-gram-blue text-white font-medium px-8 py-3 rounded-lg transition-colors duration-300"
+                    >
+                        Voltar ao Início
+                    </Link>
                 </div>
             </div>
 
@@ -151,41 +128,24 @@ const Capas = () => {
                     onClick={handleModalClick}
                 >
                     <div className="relative max-w-4xl max-h-full">
-                        {/* Close Button */}
                         <button
                             onClick={closeModal}
                             className="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors duration-300 z-10"
                             aria-label="Fechar"
                         >
-                            &times;
+                            ×
                         </button>
-                        
-                        {/* Image */}
                         <img 
                             src={selectedImage.image} 
                             alt={selectedImage.title || `Capa ${selectedImage.id}`}
                             className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
                             loading="lazy"
                         />
-                        
-                        {/* Image Info */}
                         {(selectedImage.title || selectedImage.author) && (
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-lg">
-                                {selectedImage.title && (
-                                    <h3 className="text-white font-bold text-lg mb-1">
-                                        {selectedImage.title}
-                                    </h3>
-                                )}
-                                {selectedImage.subtitle && (
-                                    <p className="text-white/90 text-sm mb-1">
-                                        {selectedImage.subtitle}
-                                    </p>
-                                )}
-                                {selectedImage.author && (
-                                    <p className="text-white/80 text-sm">
-                                        {selectedImage.author}
-                                    </p>
-                                )}
+                                {selectedImage.title && <h3 className="text-white font-bold text-lg mb-1">{selectedImage.title}</h3>}
+                                {selectedImage.subtitle && <p className="text-white/90 text-sm mb-1">{selectedImage.subtitle}</p>}
+                                {selectedImage.author && <p className="text-white/80 text-sm">{selectedImage.author}</p>}
                             </div>
                         )}
                     </div>
@@ -195,4 +155,4 @@ const Capas = () => {
     );
 };
 
-export default Capas; 
+export default Capas;

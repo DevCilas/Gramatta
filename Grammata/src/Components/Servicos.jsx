@@ -1,30 +1,36 @@
 import React from "react";
+import { Link } from 'react-router-dom'; // IMPORTADO O LINK
 import { HiDocumentText, HiSearch, HiViewBoards, HiTruck } from "react-icons/hi";
 
+// MODIFICADO: Adicionada a propriedade 'link' para cada serviço
 const services = [
     {
         id: 1,
         title: "Transcrição",
         description: "Convertemos seus manuscritos ou áudios em texto digital com precisão e cuidado.",
-        icon: <HiDocumentText className="w-12 h-12 text-gram-blue" />
+        icon: <HiDocumentText className="w-12 h-12 text-gram-blue" />,
+        link: "/servicos/transcricao"
     },
     {
         id: 2,
         title: "Revisão",
         description: "Nossa equipe de especialistas aprimora seu texto, garantindo clareza e correção.",
-        icon: <HiSearch className="w-12 h-12 text-gram-blue" />
+        icon: <HiSearch className="w-12 h-12 text-gram-blue" />,
+        link: "/servicos/revisao"
     },
     {
         id: 3,
         title: "Diagramação",
         description: "Criamos um layout profissional e atraente para o miolo do seu livro.",
-        icon: <HiViewBoards className="w-12 h-12 text-gram-blue" />
+        icon: <HiViewBoards className="w-12 h-12 text-gram-blue" />,
+        link: "/servicos/diagramacao"
     },
     {
         id: 4,
         title: "Impressão e Entrega",
         description: "Cuidamos da produção gráfica e da logística para que seu livro chegue até você.",
-        icon: <HiTruck className="w-12 h-12 text-gram-blue" />
+        icon: <HiTruck className="w-12 h-12 text-gram-blue" />,
+        link: "/servicos/impressao"
     }
 ];
 
@@ -43,10 +49,14 @@ const Servicos = () => {
                         </p>
                     </div>
 
-                    {/* Services Grid */}
+                    {/* MODIFICADO: A div foi trocada por <Link> */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {services.map((service) => (
-                            <div key={service.id} className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                            <Link 
+                                key={service.id} 
+                                to={service.link}
+                                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-2"
+                            >
                                 <div className="flex justify-center mb-4">
                                     <div className="w-16 h-16 bg-gram-white rounded-full flex items-center justify-center">
                                         {service.icon}
@@ -58,7 +68,7 @@ const Servicos = () => {
                                 <p className="text-gray-600 leading-relaxed text-sm flex-grow">
                                     {service.description}
                                 </p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -67,4 +77,4 @@ const Servicos = () => {
     );
 };
 
-export default Servicos; 
+export default Servicos;

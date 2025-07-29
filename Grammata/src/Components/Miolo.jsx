@@ -16,6 +16,15 @@ import miolo11 from './Assets/miolo/11.svg';
 import miolo12 from './Assets/miolo/12.svg';
 import miolo13 from './Assets/miolo/13.svg';
 import miolo14 from './Assets/miolo/14.svg';
+import miolo15 from './Assets/miolo/15.svg';
+import miolo16 from './Assets/miolo/16.svg';
+import miolo17 from './Assets/miolo/17.svg';
+import miolo18 from './Assets/miolo/18.svg';
+import miolo19 from './Assets/miolo/19.svg';
+import miolo20 from './Assets/miolo/20.svg';
+import miolo21 from './Assets/miolo/21.svg';
+import miolo22 from './Assets/miolo/22.svg';
+import miolo23 from './Assets/miolo/23.svg';
 
 const mioloExamples = [
     { id: 1, image: miolo1, title: "Abertura de Capítulos", description: "Layout profissional para início de capítulos" },
@@ -32,6 +41,15 @@ const mioloExamples = [
     { id: 12, image: miolo12, title: "Tipografia", description: "Hierarquia tipográfica bem definida" },
     { id: 13, image: miolo13, title: "Espaçamento", description: "Brancos e margens equilibrados" },
     { id: 14, image: miolo14, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 15, image: miolo15, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 16, image: miolo16, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 17, image: miolo17, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 18, image: miolo18, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 19, image: miolo19, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 20, image: miolo20, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 21, image: miolo21, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 22, image: miolo22, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 23, image: miolo23, title: "Composição", description: "Harmonia entre elementos visuais" },
 ];
 
 const Miolo = () => {
@@ -71,29 +89,8 @@ const Miolo = () => {
             {/* Main Content */}
             <div className="container mx-auto px-4 py-12">
                 <div className="max-w-6xl mx-auto">
-                    {/* Introduction Text */}
-                    <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-                        <h2 className="text-3xl font-bold text-gram-dark-blue mb-6">
-                            A Importância da Diagramação na Construção da Identidade Editorial
-                        </h2>
-                        <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
-                            <p>
-                                Em um universo literário cada vez mais visual e competitivo, a capa de um livro deixou de ser apenas uma proteção física para se tornar uma porta de entrada simbólica para o conteúdo que habita suas páginas. É a primeira impressão, o convite silencioso ao leitor e, muitas vezes, o fator decisivo entre o permanecer na estante ou ser levado para casa.
-                            </p>
-                            <p>
-                                Na Grammata Publicações, compreendemos profundamente essa importância e levamos a sério cada etapa do processo de criação da capa. Contamos com uma equipe formada por três grandes capistas, profissionais que unem sensibilidade artística, domínio técnico e visão editorial. Estabelecemos um compromisso com a excelência e com o cuidado estético que cada obra merece. Nossa prioridade é representar com fidelidade a identidade particular de cada livro, equilibrando os elementos gráficos com a essência da narrativa.
-                            </p>
-                            <p>
-                                Mas nosso olhar editorial não se limita à superfície. A diagramação das obras que publicamos é um espetáculo à parte — moderna, profissional e cuidadosamente planejada para encantar. Na Grammata, entendemos que a diagramação é muito mais do que estética visual: ela é o fio condutor da leitura, o suporte que organiza títulos, imagens e textos de maneira harmoniosa. O processo é realizado com base em hierarquias bem definidas por nossos editores e diretores de arte, respeitando o ritmo e a clareza que cada leitor merece.
-                            </p>
-                            <p>
-                                A qualidade de nossas diagramações transforma o ato de ler em uma experiência visual envolvente e funcional. Quando um livro possui uma diagramação bem estruturada, ele não apenas encanta — ele comunica melhor. Isso é essencial, especialmente em peças gráficas como folders informativos, onde uma diagramação mal executada pode dificultar a compreensão e comprometer o propósito da publicação.
-                            </p>
-                            <p>
-                                Na Grammata, tratamos cada projeto como uma expressão de criatividade e propósito. A capa e a diagramação caminham juntas para transformar livros em obras memoráveis. Se você, autor, deseja conhecer nossas diagramações reais e ver como elas valorizam cada conteúdo, procure pela aba Diagramação.
-                            </p>
-                        </div>
-                    </div>
+                    
+                    {/* Bloco de Texto Introdutório REMOVIDO */}
 
                     {/* Miolo Examples Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -151,7 +148,7 @@ const Miolo = () => {
                             className="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors duration-300 z-10"
                             aria-label="Fechar"
                         >
-                            &times;
+                            ×
                         </button>
                         
                         {/* Image */}
@@ -178,4 +175,4 @@ const Miolo = () => {
     );
 };
 
-export default Miolo; 
+export default Miolo;

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './Components/header'
 import Carousel from './Components/Carousel'
@@ -11,6 +12,13 @@ import QuemSomos from './Components/QuemSomos'
 import Capas from './Components/Capas'
 import Miolo from './Components/Miolo'
 import DentroDoLivro from './Components/DentroDoLivro'
+
+// ADICIONADO: Importação das novas páginas de serviços
+import TranscricaoPage from './Components/servicos/TranscricaoPage'
+import RevisaoPage from './Components/servicos/RevisaoPage'
+import DiagramacaoPage from './Components/servicos/DiagramacaoPage'
+import ImpressaoPage from './Components/servicos/ImpressaoPage'
+
 
 // Custom hook to handle scroll to top on route change
 function ScrollToTop() {
@@ -56,6 +64,13 @@ function App() {
         <Route path="/capas" element={<Capas />} />
         <Route path="/miolo" element={<Miolo />} />
         <Route path="/dentro-do-livro" element={<DentroDoLivro />} />
+        
+        {/* ADICIONADO: Definição das novas rotas de serviços */}
+        <Route path="/servicos/transcricao" element={<TranscricaoPage />} />
+        <Route path="/servicos/revisao" element={<RevisaoPage />} />
+        <Route path="/servicos/diagramacao" element={<DiagramacaoPage />} />
+        <Route path="/servicos/impressao" element={<ImpressaoPage />} />
+
       </Routes>
       <Footer />
     </Router>
