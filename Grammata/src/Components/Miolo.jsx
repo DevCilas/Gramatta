@@ -25,31 +25,34 @@ import miolo20 from './Assets/miolo/20.svg';
 import miolo21 from './Assets/miolo/21.svg';
 import miolo22 from './Assets/miolo/22.svg';
 import miolo23 from './Assets/miolo/23.svg';
+import miolo24 from './Assets/miolo/24.svg';
+
 
 const mioloExamples = [
-    { id: 1, image: miolo1, title: "Abertura de Capítulos", description: "Layout profissional para início de capítulos" },
-    { id: 2, image: miolo2, title: "Sumário", description: "Índice organizado e bem estruturado" },
+    { id: 1, image: miolo1, title: "Índice ", description: "Layout profissional para organização dos capítulos" },
+    { id: 2, image: miolo2, title:  "Capítulo", description: "Abertura de capítulo com estilo"},
     { id: 3, image: miolo3, title: "Folha de Rosto", description: "Página de título elegante" },
     { id: 4, image: miolo4, title: "Diagramação 1", description: "Layout com destaque para termos bíblicos" },
-    { id: 5, image: miolo5, title: "Diagramação 2", description: "Estrutura hierárquica clara" },
-    { id: 6, image: miolo6, title: "Diagramação 3", description: "Organização visual moderna" },
-    { id: 7, image: miolo7, title: "Leitura", description: "Texto bem distribuído e legível" },
-    { id: 8, image: miolo8, title: "Capítulo", description: "Abertura de capítulo com estilo" },
-    { id: 9, image: miolo9, title: "Miolo com Foto", description: "Integração de texto e imagem" },
+    { id: 5, image: miolo5, title: "Composição", description: "Abertura de capítulo com imagem" },
+    { id: 6, image: miolo6, title: "Diagramação 2", description: "Organização visual moderna" },
+    { id: 7, image: miolo7, title:  "Sumário", description: "Descrição intuitiva e coerente"},
+    { id: 8, image: miolo8, title: "Sumário", description: "Índice organizado e bem estruturado" },
+    { id: 9, image: miolo9, title: "Sumário", description: "Capítulos e conteúdo" },
     { id: 10, image: miolo10, title: "Layout Acadêmico", description: "Formatação para textos técnicos" },
     { id: 11, image: miolo11, title: "Design Editorial", description: "Composição visual profissional" },
     { id: 12, image: miolo12, title: "Tipografia", description: "Hierarquia tipográfica bem definida" },
     { id: 13, image: miolo13, title: "Espaçamento", description: "Brancos e margens equilibrados" },
-    { id: 14, image: miolo14, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 15, image: miolo15, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 14, image: miolo14, title: "Composição", description: "Margens bem definidas " },
+    { id: 15, image: miolo15, title: "Abertura de Capítulos", description: "Destaque na letra inical" },
     { id: 16, image: miolo16, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 17, image: miolo17, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 18, image: miolo18, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 19, image: miolo19, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 20, image: miolo20, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 21, image: miolo21, title: "Composição", description: "Harmonia entre elementos visuais" },
-    { id: 22, image: miolo22, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 17, image: miolo17, title: "Imagem", description: "Imagem alinhada ao contexto" },
+    { id: 18, image: miolo18, title: "Composição", description: "Destaque para textos bíblicos" },
+    { id: 19, image: miolo19, title: "Layout Acadêmico", description: "Visual limpo e direcional" },
+    { id: 20, image: miolo20, title: "Design Editorial", description: "Arte profissional e conectada" },
+    { id: 21, image: miolo21, title: "Sumário", description: "Capítulos e conteúdo" },
+    { id: 22, image: miolo22, title: "Diagramação", description: "Texto em inglês" },
     { id: 23, image: miolo23, title: "Composição", description: "Harmonia entre elementos visuais" },
+    { id: 24, image: miolo24, title: "Elementos Visuais", description: "Elementos visuais que contribuem na experiência" },
 ];
 
 const Miolo = () => {
