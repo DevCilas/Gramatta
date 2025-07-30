@@ -1,114 +1,146 @@
-import React, { useState, useRef, useEffect } from "react";
+// Início do arquivo src/Components/Authors.jsx
 
-// Import author images
-import AdrianoSantos from "./Assets/authors/Adriano Santos.svg";
-import Atila from "./Assets/authors/Atila.svg";
-import CarlosFilho from "./Assets/authors/Carlos Filho.svg";
-import Djoel from "./Assets/authors/Djoel.svg";
-import ElmirRibeiro from "./Assets/authors/Elmir Ribeiro.svg";
-import ElyRobert from "./Assets/authors/Ely Robert.svg";
-import HelioRibeiro from "./Assets/authors/helio-ribeiro.jpeg";
-import IsaacDias from "./Assets/authors/Isaac Dias.svg";
-import JosianeAlmeida from "./Assets/authors/Josiane Almeida.svg";
-import KellySilva from "./Assets/authors/Kelly Silva.svg";
-import LucianoCosta from "./Assets/authors/Luciano Costa.svg";
-import Marcelo from "./Assets/authors/Marcelo.svg";
-import Mazinho from "./Assets/authors/Mazinho.svg";
-import Rita from "./Assets/authors/Rita.svg";
-import Shirizu from "./Assets/authors/Shirizu.svg";
+import React from 'react';
 
+// Bloco de importações do Swiper
+import { Navigation, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// Bloco de importação de imagens dos autores (fornecido por você)
+import AdrianoSantos from './Assets/authors/Adriano Santos.svg';
+import AnaPaula from './Assets/authors/Ana Paula.svg';
+import AndreFarjão from './Assets/authors/André Farjão.svg';
+import AngelicaRodrigues from './Assets/authors/Angélica Rodrigues.svg';
+import Atila from './Assets/authors/Atila.svg';
+import CristovaoJose from './Assets/authors/Cristovão José.svg';
+import DaviSilveira from './Assets/authors/Davi Silveira.svg';
+import Djoel from './Assets/authors/Djoel.svg';
+import Elisabeth from './Assets/authors/Elisabeth.svg';
+import ElmirRibeiro from './Assets/authors/Elmir Ribeiro.svg';
+import ElyRobert from './Assets/authors/Ely Robert.svg';
+import FabioG from './Assets/authors/Fábio G.svg';
+import Felipe from './Assets/authors/Felipe.svg';
+import Genildo from './Assets/authors/Genildo.svg';
+import Guetemberg from './Assets/authors/Guetemberg.svg';
+import HelioRibeiro from './Assets/authors/Helio Ribeiro.svg';
+import IsaacDias from './Assets/authors/Isaac Dias.svg';
+import IsacOliveira from './Assets/authors/Isac Oliveira.svg';
+import IsaelAgenor from './Assets/authors/Isael Agenor.svg';
+import Jacsom from './Assets/authors/Jacsom.svg';
+import JesseBarosa from './Assets/authors/Jessé Barosa.svg';
+import JoaoBatista from './Assets/authors/João Batista.svg';
+import JoelXavier from './Assets/authors/Joel Xavier.svg';
+import JonasLuppi from './Assets/authors/Jonas Luppi.svg';
+import JoseAparecido from './Assets/authors/José Aparecido.svg';
+import Katia from './Assets/authors/Katia.svg';
+import Kelli from './Assets/authors/Kelli.svg';
+import LeoBrito from './Assets/authors/Leo Brito.svg';
+import LucasGomes from './Assets/authors/Lucas Gomes.svg';
+import LucianoCosta from './Assets/authors/Luciano Costa.svg';
+import LucimarOliveira from './Assets/authors/Lucimar de Oliveira.svg';
+import Marcel from './Assets/authors/Marcel.svg';
+import Marcelo from './Assets/authors/Marcelo.svg';
+import MarcosSemiao from './Assets/authors/Marcos Semião.svg';
+import Mazinho from './Assets/authors/Mazinho.svg';
+import Moises from './Assets/authors/Moisés.svg';
+import PedroCarlos from './Assets/authors/Pedro Carlos.svg';
+import PraxedesOliveira from './Assets/authors/Praxedes Oliveira.svg';
+import Rita from './Assets/authors/Rita.svg';
+import Roseli from './Assets/authors/Roseli.svg';
+import Sara from './Assets/authors/Sara.svg';
+import Shirizu from './Assets/authors/Shirizu.svg';
+import Vasti from './Assets/authors/Vasti.svg';
+import Wadsom from './Assets/authors/Wadsom.svg';
+import Wilker from './Assets/authors/Wilker.svg';
+
+// Lista de autores (fornecida por você)
 const authors = [
-    { id: 1, name: "Luciano Costa", image: LucianoCosta },
-    { id: 2, name: "Marcelo", image: Marcelo },
-    { id: 3, name: "Mazinho", image: Mazinho },
-    { id: 4, name: "Rita", image: Rita },
-    { id: 5, name: "Shirizu", image: Shirizu },
-    { id: 6, name: "Adriano Santos", image: AdrianoSantos },
-    { id: 7, name: "Atila", image: Atila },
-    { id: 8, name: "Djoel", image: Djoel },
-    { id: 9, name: "Elmir Ribeiro", image: ElmirRibeiro },
-    { id: 10, name: "Ely Robert", image: ElyRobert },
-    { id: 11, name: "Hélio Ribeiro", image: HelioRibeiro },
-    { id: 12, name: "Isaac Dias", image: IsaacDias },
-    { id: 13, name: "Kelly Silva", image: KellySilva },
-    { id: 14, name: "Josiane Almeida", image: JosianeAlmeida },
-    { id: 15, name: "Carlos Filho", image: CarlosFilho },
+  { id: 1, name: 'Adriano Santos', image: AdrianoSantos },
+  { id: 2, name: 'Ana Paula', image: AnaPaula },
+  { id: 3, name: 'André Farjão', image: AndreFarjão },
+  { id: 4, name: 'Angélica Rodrigues', image: AngelicaRodrigues },
+  { id: 5, name: 'Átila', image: Atila },
+  { id: 6, name: 'Cristóvão José', image: CristovaoJose },
+  { id: 7, name: 'Davi Silveira', image: DaviSilveira },
+  { id: 8, name: 'Djoel', image: Djoel },
+  { id: 9, name: 'Elisabeth', image: Elisabeth },
+  { id: 10, name: 'Elmir Ribeiro', image: ElmirRibeiro },
+  { id: 11, name: 'Ely Robert', image: ElyRobert },
+  { id: 12, name: 'Fábio G', image: FabioG },
+  { id: 13, name: 'Felipe', image: Felipe },
+  { id: 14, name: 'Genildo', image: Genildo },
+  { id: 15, name: 'Guetemberg', image: Guetemberg },
+  { id: 16, name: 'Hélio Ribeiro', image: HelioRibeiro },
+  { id: 17, name: 'Isaac Dias', image: IsaacDias },
+  { id: 18, name: 'Isac Oliveira', image: IsacOliveira },
+  { id: 19, name: 'Isael Agenor', image: IsaelAgenor },
+  { id: 20, name: 'Jacsom', image: Jacsom },
+  { id: 21, name: 'Jessé Barosa', image: JesseBarosa },
+  { id: 22, name: 'João Batista', image: JoaoBatista },
+  { id: 23, name: 'Joel Xavier', image: JoelXavier },
+  { id: 24, name: 'Jonas Luppi', image: JonasLuppi },
+  { id: 25, name: 'José Aparecido', image: JoseAparecido },
+  { id: 26, name: 'Kátia', image: Katia },
+  { id: 27, name: 'Kelli', image: Kelli },
+  { id: 28, name: 'Leo Brito', image: LeoBrito },
+  { id: 29, name: 'Lucas Gomes', image: LucasGomes },
+  { id: 30, name: 'Luciano Costa', image: LucianoCosta },
+  { id: 31, name: 'Lucimar de Oliveira', image: LucimarOliveira },
+  { id: 32, name: 'Marcel', image: Marcel },
+  { id: 33, name: 'Marcelo', image: Marcelo },
+  { id: 34, name: 'Marcos Semião', image: MarcosSemiao },
+  { id: 35, name: 'Mazinho', image: Mazinho },
+  { id: 36, name: 'Moisés', image: Moises },
+  { id: 37, name: 'Pedro Carlos', image: PedroCarlos },
+  { id: 38, name: 'Praxedes Oliveira', image: PraxedesOliveira },
+  { id: 39, name: 'Rita', image: Rita },
+  { id: 40, name: 'Roseli', image: Roseli },
+  { id: 41, name: 'Sara', image: Sara },
+  { id: 42, name: 'Shirizu', image: Shirizu },
+  { id: 43, name: 'Vasti', image: Vasti },
+  { id: 44, name: 'Wadsom', image: Wadsom },
+  { id: 45, name: 'Wilker', image: Wilker },
 ];
 
-// Duplicate authors array for infinite scroll
-const repeatCount = 5;
-const infiniteAuthors = Array.from({ length: repeatCount }).flatMap(() => authors);
-const middleIndex = Math.floor(infiniteAuthors.length / 2);
-
 const Authors = () => {
-    const scrollContainerRef = useRef(null);
-    const [isMobile, setIsMobile] = useState(false);
-
-    // Detect mobile
-    useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
-    // On mount, scroll to the middle set
-    useEffect(() => {
-        const el = scrollContainerRef.current;
-        if (el) {
-            setTimeout(() => {
-                const cardWidth = isMobile ? 80 : 112; // px, matches style width
-                el.scrollLeft = cardWidth * middleIndex;
-            }, 100);
-        }
-    }, [isMobile]);
-
-    // Infinite scroll logic
-    const handleScroll = () => {
-        const el = scrollContainerRef.current;
-        if (!el) return;
-        const cardWidth = isMobile ? 80 : 112;
-        const totalCards = infiniteAuthors.length;
-        const visibleCards = isMobile ? 1 : 5;
-        const maxScroll = cardWidth * (totalCards - visibleCards);
-        if (el.scrollLeft <= cardWidth) {
-            // Near start, reset to middle
-            el.scrollLeft = cardWidth * (middleIndex - visibleCards);
-        } else if (el.scrollLeft >= maxScroll - cardWidth) {
-            // Near end, reset to middle
-            el.scrollLeft = cardWidth * (middleIndex - visibleCards);
-        }
-    };
-
-    const scrollLeft = () => {
-        const el = scrollContainerRef.current;
-        if (el) el.scrollBy({ left: -400, behavior: 'smooth' });
-    };
-
-    const scrollRight = () => {
-        const el = scrollContainerRef.current;
-        if (el) el.scrollBy({ left: 400, behavior: 'smooth' });
-    };
-
     return (
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gram-white">
             <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
-                    {/* Section Header */}
+                    {/* Cabeçalho da Seção */}
                     <div className="text-center mb-12 md:mb-16">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gram-dark-blue mb-4 md:mb-6">
                             Nossos autores
                         </h2>
                     </div>
 
-                    {/* Simple Horizontal Scroll for Mobile */}
-                    <div className="md:hidden">
-                        <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef} onScroll={handleScroll} style={{ scrollBehavior: 'smooth' }}>
-                            <div className="flex gap-6 pb-4" style={{ width: 'max-content' }}>
-                                {infiniteAuthors.map((author, idx) => (
-                                    <div key={idx + '-' + author.id} className="flex flex-col items-center flex-shrink-0" style={{ width: '80px' }}>
-                                        {/* Author Image */}
-                                        <div className="w-16 h-16 rounded-full overflow-hidden mb-2 border-2 border-gray-300">
+                    {/* Wrapper do Carrossel */}
+                    <div className="relative">
+                        <Swiper
+                            modules={[Navigation, Autoplay]}
+                            navigation={true}
+                            loop={true}
+                            autoplay={{
+                                delay: 5000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            className="authors-carousel-wrapper"
+                            // Rolagem em blocos/páginas
+                            breakpoints={{
+                                320: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
+                                640: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 30 },
+                                768: { slidesPerView: 5, slidesPerGroup: 5, spaceBetween: 30 },
+                                1024: { slidesPerView: 7, slidesPerGroup: 7, spaceBetween: 40 },
+                            }}
+                        >
+                            {authors.map((author) => (
+                                <SwiperSlide key={author.id} className="text-center group">
+                                    <div className="flex flex-col items-center">
+                                        {/* Imagem do Autor */}
+                                        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-3 border-2 border-gray-300 group-hover:border-gram-green transition-all duration-300 group-hover:shadow-lg">
                                             <img 
                                                 src={author.image} 
                                                 alt={author.name}
@@ -116,73 +148,25 @@ const Authors = () => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        {/* Author Name */}
-                                        <h3 className="text-xs font-medium text-gram-dark-blue text-center">
+                                        {/* Nome do Autor */}
+                                        <h3 className="text-sm lg:text-base font-medium text-gram-dark-blue group-hover:text-gram-blue transition-colors duration-300">
                                             {author.name}
                                         </h3>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
 
-                    {/* Desktop Horizontal Scroll with Navigation */}
-                    <div className="hidden md:block">
-                        <div className="relative">
-                            {/* Navigation Buttons */}
-                            <button 
-                                onClick={scrollLeft}
-                                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 z-20 w-12 h-12 bg-gram-dark-blue text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:scale-110 active:scale-95"
-                            >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-
-                            <button 
-                                onClick={scrollRight}
-                                className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-6 z-20 w-12 h-12 bg-gram-dark-blue text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:scale-110 active:scale-95"
-                            >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-
-                            {/* Scrollable Container with Gradients */}
-                            <div className="relative mx-16">
-                                {/* Gradient Overlays */}
-                                <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gram-white via-gram-white/80 to-transparent z-10 pointer-events-none"></div>
-                                <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gram-white via-gram-white/80 to-transparent z-10 pointer-events-none"></div>
-                                
-                                {/* Scrollable Content */}
-                                <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef} onScroll={handleScroll} style={{ scrollBehavior: 'smooth' }}>
-                                    <div className="flex gap-8 pb-4" style={{ width: 'max-content' }}>
-                                        {infiniteAuthors.map((author, idx) => (
-                                            <div key={idx + '-' + author.id} className="flex flex-col items-center flex-shrink-0">
-                                                {/* Author Image */}
-                                                <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-full overflow-hidden mb-3 border-2 border-gray-300 hover:border-gram-green transition-all duration-300 hover:shadow-lg hover:rotate-3">
-                                                    <img 
-                                                        src={author.image} 
-                                                        alt={author.name}
-                                                        className="w-full h-full object-cover"
-                                                        loading="lazy"
-                                                    />
-                                                </div>
-                                                {/* Author Name */}
-                                                <h3 className="text-sm lg:text-base font-medium text-gram-dark-blue text-center transition-all duration-300 hover:text-gram-blue">
-                                                    {author.name}
-                                                </h3>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p className="text-center text-gram-blue/80 italic mt-8 lg:hidden">
+                        Arraste para conhecer
+                    </p>
                 </div>
             </div>
         </section>
     );
 };
 
-export default Authors; 
+export default Authors;
+
+// Fim do arquivo src/Components/Authors.jsx
