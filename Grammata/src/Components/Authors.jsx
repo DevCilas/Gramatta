@@ -54,6 +54,22 @@ import Shirizu from './Assets/authors/Shirizu.svg';
 import Vasti from './Assets/authors/Vasti.svg';
 import Wadsom from './Assets/authors/Wadsom.svg';
 import Wilker from './Assets/authors/Wilker.svg';
+import Elenival from './Assets/authors/Elenival.svg';
+import Erivaldo from './Assets/authors/Erivaldo.svg';
+import Ivanaldo from './Assets/authors/Ivanaldo.svg';
+import Jessica from './Assets/authors/Jessica.svg';
+import Jocemir from './Assets/authors/Jocemir.svg';
+import LuizCarvalho from './Assets/authors/Luiz Carvalho.svg';
+import Reginaldo from './Assets/authors/Reginaldo.svg';
+import RuteBenigno from './Assets/authors/Rute Benigno.svg';
+import Sueli from './Assets/authors/Sueli.svg';
+import Thales from './Assets/authors/Thales.svg';
+import Ubirajara from './Assets/authors/Ubirajara.svg';
+import DaviSecundo from './Assets/authors/Davi Secundo.svg';
+import AntonioJosiany from './Assets/authors/Antonio e Josiany.svg';
+import AlexCardoso from './Assets/authors/Alex Cardoso.svg';
+import Yuri from './Assets/authors/Yuri.svg';
+import JoasRibeiro from './Assets/authors/Joás Ribeiro.svg';
 
 // Lista de autores (fornecida por você)
 const authors = [
@@ -102,6 +118,22 @@ const authors = [
   { id: 43, name: 'Vasti', image: Vasti },
   { id: 44, name: 'Wadsom', image: Wadsom },
   { id: 45, name: 'Wilker', image: Wilker },
+  { id: 60, name: 'Yuri', image: Yuri },
+  { id: 61, name: 'Joás Ribeiro', image: JoasRibeiro },
+  { id: 62, name: 'Alex Cardoso', image: AlexCardoso },
+  { id: 63, name: 'Antonio e Josiany', image: AntonioJosiany },
+  { id: 64, name: 'Davi Secundo', image: DaviSecundo },
+  { id: 65, name: 'Elenival', image: Elenival },
+  { id: 66, name: 'Erivaldo', image: Erivaldo },
+  { id: 67, name: 'Ivanaldo', image: Ivanaldo },
+  { id: 68, name: 'Jessica', image: Jessica },
+  { id: 69, name: 'Jocemir', image: Jocemir },
+  { id: 70, name: 'Luiz Carvalho', image: LuizCarvalho },
+  { id: 71, name: 'Reginaldo', image: Reginaldo },
+  { id: 72, name: 'Rute Benigno', image: RuteBenigno },
+  { id: 73, name: 'Sueli', image: Sueli },
+  { id: 74, name: 'Thales', image: Thales },
+  { id: 75, name: 'Ubirajara', image: Ubirajara },
 ];
 
 const Authors = () => {
