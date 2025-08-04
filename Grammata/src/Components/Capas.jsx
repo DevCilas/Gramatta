@@ -82,6 +82,16 @@ import capa71 from './Assets/capas/71.svg';
 import capa72 from './Assets/capas/72.svg';
 import capa73 from './Assets/capas/73.svg';
 import capa74 from './Assets/capas/74.svg';
+import capa75 from './Assets/capas/75.svg';
+import capa76 from './Assets/capas/76.svg';
+import capa77 from './Assets/capas/77.svg';
+import capa78 from './Assets/capas/78.svg';
+import capa79 from './Assets/capas/79.svg';
+import capa80 from './Assets/capas/80.svg';
+import capa81 from './Assets/capas/81.svg';
+import capa82 from './Assets/capas/82.svg';
+import capa83 from './Assets/capas/83.svg';
+
 
 const bookCovers = [
   { id: 1, image: capa1 },
@@ -158,6 +168,15 @@ const bookCovers = [
   { id: 72, image: capa72 },
   { id: 73, image: capa73 },
   { id: 74, image: capa74 },
+  { id: 75, image: capa75 },
+  { id: 76, image: capa76 },
+  { id: 77, image: capa77 },
+  { id: 78, image: capa78 },
+  { id: 79, image: capa79 },
+  { id: 80, image: capa80 },
+  { id: 81, image: capa81 },
+  { id: 82, image: capa82 },
+  { id: 83, image: capa83 },
 ];
 ;
 

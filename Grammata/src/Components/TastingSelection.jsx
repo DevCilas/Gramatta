@@ -1,10 +1,10 @@
 import React from "react";
 
 // Import actual book cover images
-import sansao from './Assets/books-pdf/sansao.svg';
+import adm from './Assets/books-pdf/admcristao.svg';
 import astraducoes from './Assets/books-pdf/astraducoes.svg';
-import comomelhorarumaebd from './Assets/books-pdf/comomelhorarumaebd.svg';
-import amaodireita from './Assets/books-pdf/amaodireita.svg';
+import comovencer from './Assets/books-pdf/como-vencer-a-obesidade.svg';
+import relacionamento from './Assets/books-pdf/relacionamento.jpg';
 import rute from './Assets/books-pdf/rute.svg';
 import umacoisafaco from './Assets/books-pdf/umacoisafaco.svg';
 
@@ -13,11 +13,11 @@ import umacoisafaco from './Assets/books-pdf/umacoisafaco.svg';
 const tastingBooks = [
     {
         id: 1,
-        title: "A Vida de Sansão - Obra Completa Digital",
-        author: "Jean Carlos A.",
-        description: "Uma obra completa sobre a vida de Sansão, explorando sua história bíblica de forma detalhada e envolvente.",
-        cover: sansao,
-        pdf: "/books-pdf/a-vida-de-sansao.pdf"
+        title: "Como ser um cristão administrador",
+        author: "Adalberto Santos",
+        description: "Aprenda a ser um Cristão Administrador e não um Administrador Cristão",
+        cover: adm,
+        pdf: "/books-pdf/admcristao.pdf"
     },
     {
         id: 2,
@@ -29,19 +29,19 @@ const tastingBooks = [
     },
     {
         id: 3,
-        title: "Como Melhorar uma EBD",
-        author: "Jean Carlos A.",
-        description: "Um guia prático para aprimorar o ensino na Escola Bíblica Dominical com metodologias eficazes.",
-        cover: comomelhorarumaebd,
-        pdf: "/books-pdf/como-melhorar-ebd.pdf"
+        title: "Como Vencer a Obesidade",
+        author: "Jonatas Ferreira",
+        description: "Como vencer perdendo - A jornada para vencer a obesidade",
+        cover: comovencer,
+        pdf: "/books-pdf/como-vencer-a-obesidade.pdf"
     },
     {
         id: 4,
-        title: "A Mão Direita de Deus - Degustação",
-        author: "Autor Convidado",
-        description: "Uma degustação especial deste livro que explora a mão direita de Deus em nossas vidas.",
-        cover: amaodireita,
-        pdf: "/books-pdf/mao-direita-de-deus.pdf"
+        title: "O processo da Interpretação Pessoal",
+        author: "Dr. Elenival R. Costa",
+        description: "Uma visão de cura interior com Experiência Pessoal e Clínica",
+        cover: relacionamento,
+        pdf: "/books-pdf/relacionamento-interpessoal-degustação.pdf"
     },
     {
         id: 5,

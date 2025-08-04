@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 
 // Imagens dos lançamentos (sem alteração)
 import slide1 from './Assets/releases/slideescatologia.svg';
-import slide2 from './Assets/releases/slideimportanciaebd.svg';
+import slide2 from './Assets/releases/slidebemvindos.svg';
 import slide3 from './Assets/releases/slideminhasguerras.svg';
 
 // Array de dados (sem alteração)
@@ -26,11 +26,11 @@ const launches = [
     },
     {
         id: 2,
-        title: 'A importância da Escola Dominical',
-        description: 'Estratégias práticas para melhorar a Maior Escola do Mundo ',
+        title: 'Sejam Bem-Vindos!',
+        description: 'Sejam bem-vindos ao site oficial da Grammata Publicações. ',
         image: slide2,
-        buttonText: 'Saiba mais',
-        link: 'https://www.instagram.com/grammatapublicacoes/'
+        buttonText: 'Conhecer',
+        link:'quem-somos',
     },
     {
         id: 3,
