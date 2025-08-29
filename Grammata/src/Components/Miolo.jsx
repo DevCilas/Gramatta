@@ -26,6 +26,14 @@ import miolo21 from './Assets/miolo/21.svg';
 import miolo22 from './Assets/miolo/22.svg';
 import miolo23 from './Assets/miolo/23.svg';
 import miolo24 from './Assets/miolo/24.svg';
+import miolo25 from './Assets/miolo/25.jpg';
+import miolo26 from './Assets/miolo/26.jpg';
+import miolo27 from './Assets/miolo/27.jpg';
+import miolo28 from './Assets/miolo/28.jpg';
+import miolo29 from './Assets/miolo/29.jpg';
+import miolo30 from './Assets/miolo/30.jpg';
+import miolo31 from './Assets/miolo/31.jpg';
+import miolo32 from './Assets/miolo/32.jpg';
 
 
 const mioloExamples = [
@@ -53,6 +61,14 @@ const mioloExamples = [
     { id: 22, image: miolo22, title: "Diagramação", description: "Texto em inglês" },
     { id: 23, image: miolo23, title: "Composição", description: "Harmonia entre elementos visuais" },
     { id: 24, image: miolo24, title: "Elementos Visuais", description: "Elementos visuais que contribuem na experiência" },
+    { id: 25, image: miolo25, title: "Página de Texto", description: "Organização simples e fluida" },
+    { id: 26, image: miolo26, title: "Estrutura Visual", description: "Composição equilibrada e clara" },
+    { id: 27, image: miolo27, title: "Design Básico", description: "Apresentação objetiva e limpa" },
+    { id: 28, image: miolo28, title: "Página Ilustrada", description: "Integração de elementos visuais e texto" },
+    { id: 29, image: miolo29, title: "Diagramação Linear", description: "Alinhamento consistente e bem distribuído" },
+    { id: 30, image: miolo30, title: "Formatação Simples", description: "Layout direto e legível" },
+    { id: 31, image: miolo31, title: "Seção Visual", description: "Disposição harmoniosa de conteúdo" },
+    { id: 32, image: miolo32, title: "Página Clássica", description: "Composição tradicional de leitura" },
 ];
 
 const Miolo = () => {

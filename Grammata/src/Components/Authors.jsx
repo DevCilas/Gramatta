@@ -70,6 +70,18 @@ import AntonioJosiany from './Assets/authors/Antonio e Josiany.svg';
 import AlexCardoso from './Assets/authors/Alex Cardoso.svg';
 import Yuri from './Assets/authors/Yuri.svg';
 import JoasRibeiro from './Assets/authors/Joas Ribeiro.svg';
+import DrJoseAlcione from './Assets/authors/DrJoseAlcione.jpg';
+import EdmilsonFirmimo from './Assets/authors/EDMILSON FIRMINO.jpg';
+import Adriano from './Assets/authors/Adriano.jpg';
+import Allan from './Assets/authors/Allan.jpg';
+import AndreAzor from './Assets/authors/Andre Azor.jpg';
+import Angelica from './Assets/authors/Angelica.jpg';
+import DraLeidiane from './Assets/authors/DraLeidiane.jpg';
+import Genildo2 from './Assets/authors/Genildo.jpg';
+import Joana from './Assets/authors/Joana.jpg';
+import JoaoFranco from './Assets/authors/Joao Franco.jpg';
+import Jonatas from './Assets/authors/Jonatas.jpg';
+import Rafaela from './Assets/authors/Rafaela.jpg';
 
 // Lista de autores (fornecida por você)
 const authors = [
@@ -134,6 +146,18 @@ const authors = [
   { id: 73, name: 'Sueli', image: Sueli },
   { id: 74, name: 'Thales', image: Thales },
   { id: 75, name: 'Ubirajara', image: Ubirajara },
+  { id: 76, name: 'Dr. José Alcione', image: DrJoseAlcione },
+  { id: 77, name: 'Edmilson Firmino', image: EdmilsonFirmimo },
+  { id: 78, name: 'Adriano', image: Adriano },
+  { id: 79, name: 'Allan', image: Allan },
+  { id: 80, name: 'André Azor', image: AndreAzor },
+  { id: 81, name: 'Angélica', image: Angelica },
+  { id: 82, name: 'Dra. Leidiane', image: DraLeidiane },
+  { id: 83, name: 'Genildo', image: Genildo2 }, 
+  { id: 84, name: 'Joana', image: Joana },
+  { id: 85, name: 'João Franco', image: JoaoFranco },
+  { id: 86, name: 'Jonatas', image: Jonatas },
+  { id: 87, name: 'Rafaela', image: Rafaela },
 ];
 
 const Authors = () => {
