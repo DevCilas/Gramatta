@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 
 // Imagens dos lançamentos (sem alteração)
 import slide1 from './Assets/releases/slideescatologia.svg';
-import slide2 from './Assets/releases/slidebemvindos.svg';
+import slide2 from './Assets/releases/bannerfixo.svg';
 import slide3 from './Assets/releases/slideminhasguerras.svg';
 
 // Array de dados (sem alteração)
@@ -49,14 +49,7 @@ const Carousel = () => {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gram-cream-white">
             <div className="container mx-auto px-4">
                 {/* Cabeçalho da Seção */}
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gram-dark-blue mb-4">
-                        Lançamentos
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Conheça nossas últimas publicações que estão encantando leitores.
-                    </p>
-                </div>
+               
 
                 {/* Carrossel Swiper - Robusto e sem bugs */}
                 <div className="max-w-6xl mx-auto lancamentos-carousel-wrapper">
