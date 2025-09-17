@@ -99,7 +99,15 @@ import capa88 from './Assets/capas/88.jpg';
 import capa89 from './Assets/capas/89.jpg';
 import capa90 from './Assets/capas/90.jpg';
 import capa91 from './Assets/capas/91.jpg';
-
+import capa92 from './Assets/capas/92.jpg';
+import capa93 from './Assets/capas/93.jpg';
+import capa94 from './Assets/capas/94.jpg';
+import capa95 from './Assets/capas/95.jpg';
+import capa96 from './Assets/capas/96.jpg';
+import capa97 from './Assets/capas/97.jpg';
+import capa98 from './Assets/capas/98.jpg';
+import capa99 from './Assets/capas/99.jpg';
+import capa100 from './Assets/capas/100.jpg';
 
 const bookCovers = [
   { id: 1, image: capa1 },
@@ -193,6 +201,15 @@ const bookCovers = [
   { id: 89, image: capa89 },
   { id: 90, image: capa90 },
   { id: 91, image: capa91 },
+  { id: 92, image: capa92 },
+  { id: 93, image: capa93 },
+  { id: 94, image: capa94 },
+  { id: 95, image: capa95 },
+  { id: 96, image: capa96 },
+  { id: 97, image: capa97 },
+  { id: 98, image: capa98 },
+  { id: 99, image: capa99 },
+  { id: 100, image: capa100 },
 ];
 ;
 

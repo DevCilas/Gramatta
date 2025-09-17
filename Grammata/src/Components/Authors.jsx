@@ -82,6 +82,9 @@ import Joana from './Assets/authors/Joana.jpg';
 import JoaoFranco from './Assets/authors/Joao Franco.jpg';
 import Jonatas from './Assets/authors/Jonatas.jpg';
 import Rafaela from './Assets/authors/Rafaela.jpg';
+import EscritoraLucimar from './Assets/authors/Escritora Lucimar.jpg'
+import MichaelCavaco from './Assets/authors/Michael do Cavaco.jpg'
+
 
 // Lista de autores (fornecida por você)
 const authors = [
@@ -158,6 +161,9 @@ const authors = [
   { id: 85, name: 'João Franco', image: JoaoFranco },
   { id: 86, name: 'Jonatas', image: Jonatas },
   { id: 87, name: 'Rafaela', image: Rafaela },
+  { id: 89, name: 'Escritora Lucimar', image: EscritoraLucimar },
+  { id: 90, name: 'Michael do Cavaco', image: MichaelCavaco },
+
 ];
 
 const Authors = () => {

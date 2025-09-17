@@ -34,24 +34,33 @@ import miolo29 from './Assets/miolo/29.jpg';
 import miolo30 from './Assets/miolo/30.jpg';
 import miolo31 from './Assets/miolo/31.jpg';
 import miolo32 from './Assets/miolo/32.jpg';
-
+import miolo33 from './Assets/miolo/33.jpg';
+import miolo34 from './Assets/miolo/34.jpg';
+import miolo35 from './Assets/miolo/35.jpg';
+import miolo36 from './Assets/miolo/36.jpg';
+import miolo37 from './Assets/miolo/37.jpg';
+import miolo38 from './Assets/miolo/38.jpg';
+import miolo39 from './Assets/miolo/39.jpg';
+import miolo40 from './Assets/miolo/40.jpg';
+import miolo41 from './Assets/miolo/41.jpg';
+import miolo42 from './Assets/miolo/42.jpg';
 
 const mioloExamples = [
     { id: 1, image: miolo1, title: "Índice ", description: "Layout profissional para organização dos capítulos" },
-    { id: 2, image: miolo2, title:  "Capítulo", description: "Abertura de capítulo com estilo"},
+    { id: 2, image: miolo2, title: "Capítulo", description: "Abertura de capítulo com estilo" },
     { id: 3, image: miolo3, title: "Folha de Rosto", description: "Página de título elegante" },
     { id: 4, image: miolo4, title: "Diagramação 1", description: "Layout com destaque para termos bíblicos" },
     { id: 5, image: miolo5, title: "Composição", description: "Abertura de capítulo com imagem" },
     { id: 6, image: miolo6, title: "Diagramação 2", description: "Organização visual moderna" },
-    { id: 7, image: miolo7, title:  "Sumário", description: "Descrição intuitiva e coerente"},
+    { id: 7, image: miolo7, title: "Sumário", description: "Descrição intuitiva e coerente" },
     { id: 8, image: miolo8, title: "Sumário", description: "Índice organizado e bem estruturado" },
     { id: 9, image: miolo9, title: "Sumário", description: "Capítulos e conteúdo" },
     { id: 10, image: miolo10, title: "Layout Acadêmico", description: "Formatação para textos técnicos" },
     { id: 11, image: miolo11, title: "Design Editorial", description: "Composição visual profissional" },
     { id: 12, image: miolo12, title: "Tipografia", description: "Hierarquia tipográfica bem definida" },
     { id: 13, image: miolo13, title: "Espaçamento", description: "Brancos e margens equilibrados" },
-    { id: 14, image: miolo14, title: "Composição", description: "Margens bem definidas " },
-    { id: 15, image: miolo15, title: "Abertura de Capítulos", description: "Destaque na letra inical" },
+    { id: 14, image: miolo14, title: "Composição", description: "Margens bem definidas" },
+    { id: 15, image: miolo15, title: "Abertura de Capítulos", description: "Destaque na letra inicial" },
     { id: 16, image: miolo16, title: "Composição", description: "Harmonia entre elementos visuais" },
     { id: 17, image: miolo17, title: "Imagem", description: "Imagem alinhada ao contexto" },
     { id: 18, image: miolo18, title: "Composição", description: "Destaque para textos bíblicos" },
@@ -69,7 +78,18 @@ const mioloExamples = [
     { id: 30, image: miolo30, title: "Formatação Simples", description: "Layout direto e legível" },
     { id: 31, image: miolo31, title: "Seção Visual", description: "Disposição harmoniosa de conteúdo" },
     { id: 32, image: miolo32, title: "Página Clássica", description: "Composição tradicional de leitura" },
+    { id: 33, image: miolo33, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 34, image: miolo34, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 35, image: miolo35, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 36, image: miolo36, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 37, image: miolo37, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 38, image: miolo38, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 39, image: miolo39, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 40, image: miolo40, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 41, image: miolo41, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
+    { id: 42, image: miolo42, title: "Exemplo de Página", description: "Composição genérica de diagramação" },
 ];
+
 
 const Miolo = () => {
     const [selectedImage, setSelectedImage] = useState(null);
